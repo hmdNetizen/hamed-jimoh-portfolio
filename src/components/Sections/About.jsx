@@ -677,7 +677,7 @@ const About = (props) => {
         >
           <img
             src={portrait}
-            alt="Hamed Picture"
+            alt="Hamed Portrait"
             style={{ width: "100%", height: "100%" }}
           />
         </Grid>

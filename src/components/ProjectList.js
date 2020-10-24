@@ -1,9 +1,18 @@
+import recipeSearchApp from "../assets/RecipeSearchApp.png";
+import urlshortenerImg1 from "../assets/urlshortenerImg1.jpg";
+import urlShortenerImg2 from "../assets/urlShortenerImg2.png";
+import urlShortenerImg3 from "../assets/urlShortenerImg3.jpg";
+import booklist from "../assets/booklist1.png";
+import easyBank from "../assets/EasybankLandingPage.png";
+import manage from "../assets/manageLandingPage.png";
+import quizImg from "../assets/quizApp.png";
+
 const projectList = [
   {
     id: 0,
     name: "Chefs Mentor",
-    img: "/assets/recipeSearchApp.png",
-    alt: "Chefs Mentor Image",
+    img: recipeSearchApp,
+    alt: "Chefs Mentor",
     date: new Date("2020-05-09"),
     selected: false,
     description: "This is the Chefs Mentor Project",
@@ -19,16 +28,16 @@ const projectList = [
   {
     id: 1,
     name: "URL Shortener",
-    img: "/assets/urlshortenerImg1.jpg",
-    alt: "Url Shortener Image",
+    img: urlshortenerImg1,
+    alt: "Url Shortener",
     date: new Date("2020-09-07"),
     selected: false,
     description:
       "This project is a challenge from Frontend Mentor. It entails the building of the landing page and integrating it with the Rebrandly API.",
     images: [
-      { id: 0, link: "/assets/urlshortenerImg1.jpg", alt: "Slide One" },
-      { id: 1, link: "/assets/urlshortenerImg2.png", alt: "Slide Two" },
-      { id: 2, link: "/assets/urlshortenerImg3.jpg", alt: "Slide Three" },
+      { id: 0, link: urlshortenerImg1, alt: "Slide One" },
+      { id: 1, link: urlShortenerImg2, alt: "Slide Two" },
+      { id: 2, link: urlShortenerImg3, alt: "Slide Three" },
     ],
     liveURL: "https://hmdnetizen-url-shortener.netlify.app/",
     repo: "https://github.com/hmdNetizen/urlShortener-API",
@@ -64,8 +73,8 @@ const projectList = [
   {
     id: 2,
     name: "Booklist Tracker with Dark Mode",
-    img: "/assets/booklist.png",
-    alt: "Book List Image",
+    img: booklist,
+    alt: "Book List",
     date: new Date("2020-07-07"),
     selected: false,
     description: "This is the Booklist Tracker Project",
@@ -81,8 +90,8 @@ const projectList = [
   {
     id: 3,
     name: "EasyBank Landing Page",
-    img: "/assets/easyBankLandingPage.png",
-    alt: "Easy Bank Image",
+    img: easyBank,
+    alt: "Easy Bank",
     date: new Date("2020-07-22"),
     selected: false,
     description: "This is the EasyBank Landing Page Project",
@@ -98,8 +107,8 @@ const projectList = [
   {
     id: 4,
     name: "Manage Landing Page",
-    img: "/assets/manageLandingPage.png",
-    alt: "Manage Landing Page Image",
+    img: manage,
+    alt: "Manage Landing Page",
     date: new Date("2020-07-31"),
     selected: false,
     description: "This is the Manage Landing Page Project",
@@ -115,8 +124,8 @@ const projectList = [
   {
     id: 5,
     name: "Javascript Quiz",
-    img: "/assets/quizApp.png",
-    alt: "Quiz App Image",
+    img: quizImg,
+    alt: "Quiz App",
     date: new Date("2020-01-04"),
     selected: false,
     description: "This is the Javascript Quiz Project",
