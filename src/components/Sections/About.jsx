@@ -15,17 +15,15 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Tooltip from "@material-ui/core/Tooltip";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import HighlightOff from "@material-ui/icons/HighlightOff";
-import Home from "@material-ui/icons/Home";
-import ImportantDevices from "@material-ui/icons/ImportantDevices";
-import ListIcon from "@material-ui/icons/List";
-import Build from "@material-ui/icons/Build";
-import Forum from "@material-ui/icons/Forum";
-import VerticalSplit from "@material-ui/icons/VerticalSplit";
 
 import portrait from "../../assets/photo.jpg";
 import passport from "../../assets//passport.png";
-// import home from "../../assets/home.svg";
+import home from "../../assets/home.svg";
 import email from "../../assets/email.svg";
+import devices from "../../assets/devices.svg";
+import file from "../../assets/file.svg";
+import skills from "../../assets/tools.svg";
+import portfolio from "../../assets/portfolio.svg";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
@@ -183,30 +181,30 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const lists = [
-  { id: 1, pageCount: "01", label: "Home", icon: Home, link: "#homepage" },
+  { id: 1, pageCount: "01", label: "Home", icon: home, link: "#homepage" },
   {
     id: 2,
     pageCount: "02",
     label: "Services",
-    icon: ImportantDevices,
+    icon: devices,
     link: "#services",
   },
   {
     id: 3,
     pageCount: "03",
     label: "Portfolio",
-    icon: ListIcon,
+    icon: portfolio,
     link: "#portfolio",
   },
   {
     id: 4,
     pageCount: "04",
     label: "Resume",
-    icon: VerticalSplit,
+    icon: file,
     link: "#resume",
   },
-  { id: 5, pageCount: "05", label: "Skills", icon: Build, link: "#skills" },
-  { id: 6, pageCount: "06", label: "Contact", icon: Forum, link: "#contact" },
+  { id: 5, pageCount: "05", label: "Skills", icon: skills, link: "#skills" },
+  { id: 6, pageCount: "06", label: "Contact", icon: email, link: "#contact" },
 ];
 
 const socials = [
@@ -548,8 +546,14 @@ const About = (props) => {
                       <Forum />
                     ) : null}
                   </ListItemIcon> */}
-                  <ListItemIcon>
-                    <img src={email} alt="Email Icon" width={40} height={40} />
+
+                  <ListItemIcon classes={{ root: classes.listIcon }}>
+                    <img
+                      src={list.icon}
+                      alt={`${list.label} Icon`}
+                      width={40}
+                      height={40}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary={list.label}
@@ -650,7 +654,7 @@ const About = (props) => {
         <Grid item style={{ marginLeft: matchesXXXS && "-1em" }}>
           <Grid container justify={matchesMDOnly ? undefined : "center"}>
             {socials.map((social) => (
-              <Grid item>
+              <Grid item key={social.id}>
                 <Tooltip
                   title={social.title}
                   arrow
