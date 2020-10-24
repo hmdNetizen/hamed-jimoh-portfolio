@@ -9,7 +9,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import ToolTip from "@material-ui/core/ToolTip";
+import Tooltip from "@material-ui/core/Tooltip";
 import getProjects from "../ProjectList";
 import SelectedProject from "./SelectedProject";
 
@@ -199,7 +199,7 @@ const Portfolio = () => {
         </Grid>
         {/* Filter Icon and text section */}
         <Grid item>
-          <ToolTip
+          <Tooltip
             title={
               <h4
                 style={{
@@ -220,7 +220,7 @@ const Portfolio = () => {
             >
               <FilterListIcon classes={{ root: classes.filterIcon }} />
             </IconButton>
-          </ToolTip>
+          </Tooltip>
           <Menu
             elevation={0}
             getContentAnchorEl={null}
