@@ -12,7 +12,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import ToolTip from "@material-ui/core/ToolTip";
+import Tooltip from "@material-ui/core/Tooltip";
 import HighlightOff from "@material-ui/icons/HighlightOff";
 import Home from "@material-ui/icons/Home";
 import ImportantDevices from "@material-ui/icons/ImportantDevices";
@@ -625,7 +625,7 @@ const About = (props) => {
           <Grid container justify={matchesMDOnly ? undefined : "center"}>
             {socials.map((social) => (
               <Grid item key={social.id}>
-                <ToolTip
+                <Tooltip
                   title={social.title}
                   arrow
                   className={classes.tooltip}
@@ -662,7 +662,7 @@ const About = (props) => {
                       />
                     ) : null}
                   </IconButton>
-                </ToolTip>
+                </Tooltip>
               </Grid>
             ))}
           </Grid>
