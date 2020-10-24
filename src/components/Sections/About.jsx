@@ -25,8 +25,8 @@ import Twitter from "@material-ui/icons/Twitter";
 import Facebook from "@material-ui/icons/Facebook";
 import Instagram from "@material-ui/icons/Instagram";
 
-import portrait from "../assets/photo.jpg";
-import passport from "../assets/passport.png";
+import portrait from "../../assets/photo.jpg";
+import passport from "../../assets//passport.png";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
