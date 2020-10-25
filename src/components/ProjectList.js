@@ -1,11 +1,21 @@
 import recipeSearchApp from "../assets/RecipeSearchApp.png";
+import recipeSearchApp2 from "../assets/recipeimage2.png";
+import recipeSearchApp3 from "../assets/recipeimage3.png";
 import urlshortenerImg1 from "../assets/urlshortenerImg1.jpg";
 import urlShortenerImg2 from "../assets/urlShortenerImg2.png";
 import urlShortenerImg3 from "../assets/urlShortenerImg3.jpg";
 import booklist from "../assets/booklist1.png";
+import booklist2 from "../assets/booklist2.png";
+import booklist3 from "../assets/booklist3.png";
 import easyBank from "../assets/EasybankLandingPage.png";
+import easyBank2 from "../assets/EasybankLandingPage2.jpg";
+import easyBank3 from "../assets/EasybankLandingPage3.jpg";
 import manage from "../assets/manageLandingPage.png";
+import manage2 from "../assets/manage2.png";
+import manage3 from "../assets/manage3.png";
 import quizImg from "../assets/quizApp.png";
+import quizImg2 from "../assets/quiz2.png";
+import quizImg3 from "../assets/quiz3.png";
 
 const projectList = [
   {
@@ -17,9 +27,9 @@ const projectList = [
     selected: false,
     description: "This is the Chefs Mentor Project",
     images: [
-      { id: 0, link: "/assets/RecipeSearchApp.png", alt: "Slide One" },
-      { id: 1, link: "/assets/recipeimage2.png", alt: "Slide Two" },
-      { id: 2, link: "/assets/recipeimage3.png", alt: "Slide Three" },
+      { id: 0, link: recipeSearchApp, alt: "Slide One" },
+      { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
+      { id: 2, link: recipeSearchApp3, alt: "Slide Three" },
     ],
     liveURL: "https://hmdnetizen.github.io/search-recipes/",
     repo: "https://github.com/hmdNetizen/search-recipes",
@@ -79,9 +89,9 @@ const projectList = [
     selected: false,
     description: "This is the Booklist Tracker Project",
     images: [
-      { id: 0, link: "/assets/booklist1.png", alt: "Slide One" },
-      { id: 1, link: "/assets/booklist2.png", alt: "Slide Two" },
-      { id: 2, link: "/assets/booklist3.png", alt: "Slide Three" },
+      { id: 0, link: booklist, alt: "Slide One" },
+      { id: 1, link: booklist2, alt: "Slide Two" },
+      { id: 2, link: booklist3, alt: "Slide Three" },
     ],
 
     repo: "https://github.com/hmdNetizen/BookList-App-With-Dark-Mode",
@@ -96,9 +106,9 @@ const projectList = [
     selected: false,
     description: "This is the EasyBank Landing Page Project",
     images: [
-      { id: 0, link: "/assets/EasybankLandingPage.png", alt: "First Slide" },
-      { id: 1, link: "/assets/EasybankLandingPage2.jpg", alt: "Second Slide" },
-      { id: 2, link: "/assets/EasybankLandingPage3.jpg", alt: "Third Slide" },
+      { id: 0, link: easyBank, alt: "First Slide" },
+      { id: 1, link: easyBank2, alt: "Second Slide" },
+      { id: 2, link: easyBank3, alt: "Third Slide" },
     ],
     liveURL: "https://easybank-landing-page-lake.vercel.app/",
     repo: "https://github.com/hmdNetizen/EasyBank-Landing-Page",
@@ -113,9 +123,9 @@ const projectList = [
     selected: false,
     description: "This is the Manage Landing Page Project",
     images: [
-      { id: 0, link: "/assets/manageLandingPage.png", alt: "Slide One" },
-      { id: 1, link: "/assets/manage2.png", alt: "Slide Two" },
-      { id: 2, link: "/assets/manage3.png", alt: "Slide Three" },
+      { id: 0, link: manage, alt: "Slide One" },
+      { id: 1, link: manage2, alt: "Slide Two" },
+      { id: 2, link: manage3, alt: "Slide Three" },
     ],
     liveURL: "https://manage-landiing-page.netlify.app/",
     repo: "https://github.com/hmdNetizen/Manage-landing-page",
@@ -130,9 +140,9 @@ const projectList = [
     selected: false,
     description: "This is the Javascript Quiz Project",
     images: [
-      { id: 0, link: "/assets/quiz2.png", alt: "Slide One" },
-      { id: 1, link: "/assets/quiz.png", alt: "Slide Two" },
-      { id: 1, link: "/assets/quiz3.png", alt: "Slide Three" },
+      { id: 0, link: quizImg2, alt: "Slide One" },
+      { id: 1, link: quizImg, alt: "Slide Two" },
+      { id: 1, link: quizImg3, alt: "Slide Three" },
     ],
     repo: "https://github.com/hmdNetizen/Quiz-Application",
     functionalities: [],
