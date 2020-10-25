@@ -9,6 +9,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import FiberManualRecordOutlinedIcon from "@material-ui/icons/FiberManualRecordOutlined";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import Hidden from "@material-ui/core/Hidden";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 import Slider from "react-slick";
@@ -117,10 +118,24 @@ const SelectedProject = (props) => {
         <Grid
           item
           container
+          direction={matchesSM ? "column" : undefined}
           key={project.id}
           spacing={6}
+          alignItems={matchesSM ? "center" : undefined}
           justify={matchesSM ? "center" : undefined}
         >
+          <Hidden mdUp>
+            <Grid item>
+              <Typography
+                variant={matchesSM ? "h4" : "h5"}
+                gutterBottom
+                align={matchesSM ? "center" : undefined}
+                style={{ marginBottom: matchesSM ? 0 : ".75em" }}
+              >
+                {project.name}
+              </Typography>
+            </Grid>
+          </Hidden>
           <Grid
             item
             md
@@ -148,15 +163,17 @@ const SelectedProject = (props) => {
               direction="column"
               alignItems={matchesSM ? "center" : undefined}
             >
-              <Grid item>
-                <Typography
-                  variant={matchesSM ? "h4" : "h5"}
-                  gutterBottom
-                  style={{ marginBottom: ".75em" }}
-                >
-                  {project.name}
-                </Typography>
-              </Grid>
+              <Hidden smDown>
+                <Grid item>
+                  <Typography
+                    variant={matchesSM ? "h4" : "h5"}
+                    gutterBottom
+                    style={{ marginBottom: ".75em" }}
+                  >
+                    {project.name}
+                  </Typography>
+                </Grid>
+              </Hidden>
               <Grid item>
                 <Typography
                   variant="h5"
