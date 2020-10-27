@@ -16,6 +16,12 @@ import manage3 from "../assets/manage3.png";
 import quizImg from "../assets/quizApp.png";
 import quizImg2 from "../assets/quiz2.png";
 import quizImg3 from "../assets/quiz3.png";
+import htmlIcon from "../assets/html5.svg";
+import cssIcon from "../assets/css3.svg";
+import jsIcon from "../assets/javascript.svg";
+import reactIcon from "../assets/react.svg";
+import materialUI from "../assets/material-ui.svg";
+import rebrandly from "../assets/rebrandly.png";
 
 const projectList = [
   {
@@ -34,6 +40,7 @@ const projectList = [
     liveURL: "https://hmdnetizen.github.io/search-recipes/",
     repo: "https://github.com/hmdNetizen/search-recipes",
     functionalities: [],
+    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
   },
   {
     id: 1,
@@ -79,6 +86,14 @@ const projectList = [
         ],
       },
     ],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      { id: 4, logo: materialUI, alt: "Material-UI Logo", title: "Material-UI" },
+      { id: 5, logo: rebrandly, alt: "Rebrandly Logo", title: "Rebrandly API" },
+    ],
   },
   {
     id: 2,
@@ -96,6 +111,7 @@ const projectList = [
 
     repo: "https://github.com/hmdNetizen/BookList-App-With-Dark-Mode",
     functionalities: [],
+    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
   },
   {
     id: 3,
@@ -113,6 +129,7 @@ const projectList = [
     liveURL: "https://easybank-landing-page-lake.vercel.app/",
     repo: "https://github.com/hmdNetizen/EasyBank-Landing-Page",
     functionalities: [],
+    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon, materialUI],
   },
   {
     id: 4,
@@ -130,6 +147,7 @@ const projectList = [
     liveURL: "https://manage-landiing-page.netlify.app/",
     repo: "https://github.com/hmdNetizen/Manage-landing-page",
     functionalities: [],
+    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon, materialUI],
   },
   {
     id: 5,
@@ -146,6 +164,7 @@ const projectList = [
     ],
     repo: "https://github.com/hmdNetizen/Quiz-Application",
     functionalities: [],
+    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
   },
 ];
 

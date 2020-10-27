@@ -531,22 +531,6 @@ const About = (props) => {
                     setPageCounter(list.id);
                   }}
                 >
-                  {/* <ListItemIcon classes={{ root: classes.listIcon }}>
-                    {list.icon.displayName === "HomeIcon" ? (
-                      <Home />
-                    ) : list.icon.displayName === "ImportantDevicesIcon" ? (
-                      <ImportantDevices />
-                    ) : list.icon.displayName === "ListIcon" ? (
-                      <ListIcon />
-                    ) : list.icon.displayName === "VerticalSplitIcon" ? (
-                      <VerticalSplit />
-                    ) : list.icon.displayName === "BuildIcon" ? (
-                      <Build />
-                    ) : list.icon.displayName === "ForumIcon" ? (
-                      <Forum />
-                    ) : null}
-                  </ListItemIcon> */}
-
                   <ListItemIcon classes={{ root: classes.listIcon }}>
                     <img
                       src={list.icon}

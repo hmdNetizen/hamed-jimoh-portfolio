@@ -10,6 +10,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import FiberManualRecordOutlinedIcon from "@material-ui/icons/FiberManualRecordOutlined";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import Hidden from "@material-ui/core/Hidden";
+import Tooltip from "@material-ui/core/Tooltip";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 import Slider from "react-slick";
@@ -57,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 50,
     border: `2px solid ${theme.palette.common.tan}`,
     fontSize: "1.25rem",
-    padding: ".5em 1.5em",
+    padding: ".5em .85em",
 
     "&:hover": {
       background: theme.palette.common.gold,
@@ -66,9 +67,12 @@ const useStyles = makeStyles((theme) => ({
       padding: ".5em .9em",
     },
   },
+  //   techs: {
+
+  //   }
 }));
 const SelectedProject = (props) => {
-  const { setIsSelected, setSelectedProject, selectedProject } = props;
+  const { setIsSelected, setSelectedProject, selectedProject, ...rest } = props;
 
   const settings = {
     dots: true,
@@ -82,7 +86,8 @@ const SelectedProject = (props) => {
   const theme = useTheme();
 
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  const matchesMDX = useMediaQuery("(max-width:980px)");
+  const matchesMDX = useMediaQuery("(max-width:1030px)");
+  const matchesMDXX = useMediaQuery("(max-width:978px)");
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXS = useMediaQuery("(max-width:450px)");
@@ -97,6 +102,8 @@ const SelectedProject = (props) => {
           ? "0 1em 5em 1em"
           : matchesXS
           ? "0 2em 5em 2em"
+          : matchesSM
+          ? "0 4em 5em 4em"
           : matchesMDX
           ? "0 4em 5em 6em"
           : "0 5em 5em 6em",
@@ -136,27 +143,75 @@ const SelectedProject = (props) => {
               </Typography>
             </Grid>
           </Hidden>
-          <Grid
-            item
-            md
-            style={{
-              maxWidth: matchesXXXS
-                ? "17em"
-                : matchesXXS
-                ? "20em"
-                : matchesXS
-                ? "25em"
-                : matchesSM
-                ? "30em"
-                : "25em",
-            }}
-          >
-            <Slider {...settings}>
-              {project.images.map((image) => (
-                <img key={image.id} src={image.link} alt={image.alt} />
-              ))}
-            </Slider>
+          <Grid item md>
+            <Grid container direction="column">
+              <Grid
+                item
+                style={{
+                  maxWidth: matchesXXXS
+                    ? "17em"
+                    : matchesXXS
+                    ? "20em"
+                    : matchesXS
+                    ? "25em"
+                    : matchesSM
+                    ? "30em"
+                    : "25em",
+                }}
+              >
+
+                <Slider {...settings}>
+                  {project.images.map((image) => (
+                    <img key={image.id} src={image.link} alt={image.alt} />
+                  ))}
+                </Slider>
+              </Grid>
+              <Grid
+                container
+                direction="column"
+                alignItems={matchesSM ? "center" : undefined}
+              >
+                <Hidden smDown>
+                <Grid item style={{ marginTop: "2em" }}>
+                  <Typography
+                    variant="h6"
+                    align="center"
+                    gutterBottom
+                    style={{ marginBottom: "1.5em" }}
+                  >
+                    Technologies Used
+                  </Typography>
+                </Grid>
+                
+                  <Grid
+                    item
+                    container
+                    justify="center"
+                    alignItems="center"
+                  >
+                    {project.techs.map((tech) => (
+                      <Grid item key={tech.id} style={{marginRight: tech.alt === "Rebrandly Logo" ? 0 : "1em"}}>
+                        <Tooltip
+                  title={tech.title}
+                  arrow
+                  // className={classes.tooltip}
+                  {...rest}
+                >
+                  <img
+                        src={tech.logo}
+                        alt={tech.alt}
+                          width={tech.alt === "Rebrandly Logo" ? 115 : 25}
+                          className={classes.techs}
+                        />
+                        </Tooltip>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Hidden>
+              </Grid>
+            </Grid>
           </Grid>
+
           <Grid item md>
             <Grid
               container
@@ -258,12 +313,49 @@ const SelectedProject = (props) => {
                     ))}
                   </List>
                 </Grid>
+                <Hidden mdUp>
+                <Grid item style={{ marginTop: "2em" }}>
+                  <Typography
+                    variant="h6"
+                    align="center"
+                    gutterBottom
+                    style={{ marginBottom: "1.5em" }}
+                  >
+                    Technologies Used
+                  </Typography>
+                </Grid>
+                
+                  <Grid
+                    item
+                    container
+                    justify="center"
+                    alignItems="center"
+                  >
+                    {project.techs.map((tech) => (
+                      <Grid item key={tech.id} style={{marginRight: tech.alt === "Rebrandly Logo" ? 0 : "1em"}}>
+                        <Tooltip
+                  title={tech.title}
+                  arrow
+                  // className={classes.tooltip}
+                  {...rest}
+                >
+                  <img
+                        src={tech.logo}
+                        alt={tech.alt}
+                          width={tech.alt === "Rebrandly Logo" ? 115 : 25}
+                          className={classes.techs}
+                        />
+                        </Tooltip>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Hidden>
                 <Grid
                   item
                   container
                   direction={matchesXXS ? "column" : "row"}
                   alignItems={matchesXXS ? "center" : undefined}
-                  justify={matchesSM ? "center" : undefined}
+                  justify={matchesMD ? "center" : undefined}
                   style={{ marginTop: "3em" }}
                 >
                   {selectedProject.map((project) =>
@@ -292,9 +384,16 @@ const SelectedProject = (props) => {
                                 : matchesSM
                                 ? ".5em 1.5em"
                                 : matchesMDX
-                                ? ".5em .75em"
+                                ? ".35em .5em"
+                                : matchesMDXX
+                                ? ".25em .35em"
                                 : undefined,
                               marginBottom: matchesXXS ? "1.5em" : 0,
+                              fontSize: matchesSM
+                                ? undefined
+                                : matchesMD
+                                ? "1rem"
+                                : undefined,
                             }}
                           >
                             Live Project
@@ -314,7 +413,14 @@ const SelectedProject = (props) => {
                                 : matchesSM
                                 ? ".5em 1.5em"
                                 : matchesMDX
-                                ? ".5em .75em"
+                                ? ".35em .5em"
+                                : matchesMDXX
+                                ? ".25em .35em"
+                                : undefined,
+                              fontSize: matchesSM
+                                ? undefined
+                                : matchesMD
+                                ? "1rem"
                                 : undefined,
                             }}
                           >
