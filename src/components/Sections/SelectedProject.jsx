@@ -149,17 +149,16 @@ const SelectedProject = (props) => {
                 item
                 style={{
                   maxWidth: matchesXXXS
-                    ? "17em"
+                    ? "14em"
                     : matchesXXS
-                    ? "20em"
+                    ? "17em"
                     : matchesXS
-                    ? "25em"
+                    ? "20em"
                     : matchesSM
-                    ? "30em"
+                    ? "27em"
                     : "25em",
                 }}
               >
-
                 <Slider {...settings}>
                   {project.images.map((image) => (
                     <img key={image.id} src={image.link} alt={image.alt} />
@@ -172,37 +171,39 @@ const SelectedProject = (props) => {
                 alignItems={matchesSM ? "center" : undefined}
               >
                 <Hidden smDown>
-                <Grid item style={{ marginTop: "2em" }}>
-                  <Typography
-                    variant="h6"
-                    align="center"
-                    gutterBottom
-                    style={{ marginBottom: "1.5em" }}
-                  >
-                    Technologies Used
-                  </Typography>
-                </Grid>
-                
-                  <Grid
-                    item
-                    container
-                    justify="center"
-                    alignItems="center"
-                  >
+                  <Grid item style={{ marginTop: "2em" }}>
+                    <Typography
+                      variant="h6"
+                      align="center"
+                      gutterBottom
+                      style={{ marginBottom: "1.5em" }}
+                    >
+                      Technologies Used
+                    </Typography>
+                  </Grid>
+
+                  <Grid item container justify="center" alignItems="center">
                     {project.techs.map((tech) => (
-                      <Grid item key={tech.id} style={{marginRight: tech.alt === "Rebrandly Logo" ? 0 : "1em"}}>
+                      <Grid
+                        item
+                        key={tech.id}
+                        style={{
+                          marginRight:
+                            tech.alt === "Rebrandly Logo" ? 0 : "1em",
+                        }}
+                      >
                         <Tooltip
-                  title={tech.title}
-                  arrow
-                  // className={classes.tooltip}
-                  {...rest}
-                >
-                  <img
-                        src={tech.logo}
-                        alt={tech.alt}
-                          width={tech.alt === "Rebrandly Logo" ? 115 : 25}
-                          className={classes.techs}
-                        />
+                          title={tech.title}
+                          arrow
+                          // className={classes.tooltip}
+                          {...rest}
+                        >
+                          <img
+                            src={tech.logo}
+                            alt={tech.alt}
+                            width={tech.alt === "Rebrandly Logo" ? 115 : 25}
+                            className={classes.techs}
+                          />
                         </Tooltip>
                       </Grid>
                     ))}
@@ -314,37 +315,39 @@ const SelectedProject = (props) => {
                   </List>
                 </Grid>
                 <Hidden mdUp>
-                <Grid item style={{ marginTop: "2em" }}>
-                  <Typography
-                    variant="h6"
-                    align="center"
-                    gutterBottom
-                    style={{ marginBottom: "1.5em" }}
-                  >
-                    Technologies Used
-                  </Typography>
-                </Grid>
-                
-                  <Grid
-                    item
-                    container
-                    justify="center"
-                    alignItems="center"
-                  >
+                  <Grid item style={{ marginTop: "2em" }}>
+                    <Typography
+                      variant="h6"
+                      align="center"
+                      gutterBottom
+                      style={{ marginBottom: "1.5em" }}
+                    >
+                      Technologies Used
+                    </Typography>
+                  </Grid>
+
+                  <Grid item container justify="center" alignItems="center">
                     {project.techs.map((tech) => (
-                      <Grid item key={tech.id} style={{marginRight: tech.alt === "Rebrandly Logo" ? 0 : "1em"}}>
+                      <Grid
+                        item
+                        key={tech.id}
+                        style={{
+                          marginRight:
+                            tech.alt === "Rebrandly Logo" ? 0 : "1em",
+                        }}
+                      >
                         <Tooltip
-                  title={tech.title}
-                  arrow
-                  // className={classes.tooltip}
-                  {...rest}
-                >
-                  <img
-                        src={tech.logo}
-                        alt={tech.alt}
-                          width={tech.alt === "Rebrandly Logo" ? 115 : 25}
-                          className={classes.techs}
-                        />
+                          title={tech.title}
+                          arrow
+                          // className={classes.tooltip}
+                          {...rest}
+                        >
+                          <img
+                            src={tech.logo}
+                            alt={tech.alt}
+                            width={tech.alt === "Rebrandly Logo" ? 115 : 25}
+                            className={classes.techs}
+                          />
                         </Tooltip>
                       </Grid>
                     ))}
