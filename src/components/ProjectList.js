@@ -31,7 +31,8 @@ const projectList = [
     alt: "Chefs Mentor",
     date: new Date("2020-05-09"),
     selected: false,
-    description: "This is the Chefs Mentor Project",
+    description:
+      "This project was developed during the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
     images: [
       { id: 0, link: recipeSearchApp, alt: "Slide One" },
       { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
@@ -39,7 +40,25 @@ const projectList = [
     ],
     liveURL: "https://hmdnetizen.github.io/search-recipes/",
     repo: "https://github.com/hmdNetizen/search-recipes",
-    functionalities: [],
+    functionalities: [
+      {
+        id: 0,
+        description:
+          "View the optimal layout for the site depending on their device's screen size",
+      },
+      { id: 1, description: "Shorten any valid URL" },
+      {
+        id: 2,
+        description:
+          "See a list of their shortened links, even after refreshing the browser",
+      },
+      {
+        id: 3,
+        description:
+          "Copy the shortened link to their clipboard in a single click",
+      },
+    ],
+    techs: [],
     techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
   },
   {
@@ -91,7 +110,12 @@ const projectList = [
       { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
       { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
       { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-      { id: 4, logo: materialUI, alt: "Material-UI Logo", title: "Material-UI" },
+      {
+        id: 4,
+        logo: materialUI,
+        alt: "Material-UI Logo",
+        title: "Material-UI",
+      },
       { id: 5, logo: rebrandly, alt: "Rebrandly Logo", title: "Rebrandly API" },
     ],
   },
@@ -102,7 +126,8 @@ const projectList = [
     alt: "Book List",
     date: new Date("2020-07-07"),
     selected: false,
-    description: "This is the Booklist Tracker Project",
+    description:
+      "This project keeps track of the different books that I have marked for read. It incorporates dark theme that alternates between purple and dark theme. It also uses basic CRUD functionalities.",
     images: [
       { id: 0, link: booklist, alt: "Slide One" },
       { id: 1, link: booklist2, alt: "Slide Two" },
@@ -110,7 +135,18 @@ const projectList = [
     ],
 
     repo: "https://github.com/hmdNetizen/BookList-App-With-Dark-Mode",
-    functionalities: [],
+    functionalities: [
+      {
+        id: 0,
+        description:
+          "Fecth, create, update and delete books from the local storage",
+      },
+      { id: 1, description: "Alternates between purple and dark theme" },
+      {
+        id: 2,
+        description: "Monitors the number of books to be read",
+      },
+    ],
     techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
   },
   {

@@ -107,6 +107,7 @@ const SelectedProject = (props) => {
           : matchesMDX
           ? "0 4em 5em 6em"
           : "0 5em 5em 6em",
+        overflowX: "hidden",
       }}
     >
       <Grid item style={{ marginBottom: "1.5em" }}>
@@ -192,12 +193,7 @@ const SelectedProject = (props) => {
                             tech.alt === "Rebrandly Logo" ? 0 : "1em",
                         }}
                       >
-                        <Tooltip
-                          title={tech.title}
-                          arrow
-                          // className={classes.tooltip}
-                          {...rest}
-                        >
+                        <Tooltip title={tech.title} arrow {...rest}>
                           <img
                             src={tech.logo}
                             alt={tech.alt}
@@ -326,7 +322,13 @@ const SelectedProject = (props) => {
                     </Typography>
                   </Grid>
 
-                  <Grid item container justify="center" alignItems="center">
+                  <Grid
+                    item
+                    container
+                    justify="center"
+                    alignItems="center"
+                    style={{ width: "100%", overflowX: "hidden" }}
+                  >
                     {project.techs.map((tech) => (
                       <Grid
                         item
@@ -336,12 +338,7 @@ const SelectedProject = (props) => {
                             tech.alt === "Rebrandly Logo" ? 0 : "1em",
                         }}
                       >
-                        <Tooltip
-                          title={tech.title}
-                          arrow
-                          // className={classes.tooltip}
-                          {...rest}
-                        >
+                        <Tooltip title={tech.title} arrow {...rest}>
                           <img
                             src={tech.logo}
                             alt={tech.alt}
