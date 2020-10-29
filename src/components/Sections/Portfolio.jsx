@@ -186,7 +186,10 @@ const Portfolio = () => {
         container
         alignItems="center"
         justify="space-between"
-        style={{ paddingLeft: "2em", paddingRight: "2em" }}
+        style={{
+          paddingLeft: "2em",
+          paddingRight: "2em",
+        }}
       >
         <Grid item>
           <Typography
@@ -375,7 +378,9 @@ const Portfolio = () => {
       item
       container
       direction="column"
-      style={{ paddingLeft: matchesSM ? 0 : matchesMD ? "8.33333%" : "25%" }}
+      style={{
+        paddingLeft: matchesSM ? 0 : matchesMD ? "8.33333%" : "25%",
+      }}
       id="portfolio"
     >
       {!isSelected ? (

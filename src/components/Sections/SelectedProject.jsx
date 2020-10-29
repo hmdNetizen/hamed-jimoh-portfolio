@@ -67,9 +67,6 @@ const useStyles = makeStyles((theme) => ({
       padding: ".5em .9em",
     },
   },
-  //   techs: {
-
-  //   }
 }));
 const SelectedProject = (props) => {
   const { setIsSelected, setSelectedProject, selectedProject, ...rest } = props;
@@ -197,8 +194,13 @@ const SelectedProject = (props) => {
                           <img
                             src={tech.logo}
                             alt={tech.alt}
-                            width={tech.alt === "Rebrandly Logo" ? 115 : 25}
-                            className={classes.techs}
+                            width={
+                              tech.alt === "Rebrandly Logo"
+                                ? 115
+                                : tech.alt === "Edamam Logo"
+                                ? 85
+                                : 25
+                            }
                           />
                         </Tooltip>
                       </Grid>
@@ -342,7 +344,13 @@ const SelectedProject = (props) => {
                           <img
                             src={tech.logo}
                             alt={tech.alt}
-                            width={tech.alt === "Rebrandly Logo" ? 115 : 25}
+                            width={
+                              tech.alt === "Rebrandly Logo"
+                                ? 115
+                                : tech.alt === "Edamam Logo"
+                                ? 85
+                                : 25
+                            }
                             className={classes.techs}
                           />
                         </Tooltip>

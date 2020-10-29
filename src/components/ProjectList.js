@@ -22,6 +22,7 @@ import jsIcon from "../assets/javascript.svg";
 import reactIcon from "../assets/react.svg";
 import materialUI from "../assets/material-ui.svg";
 import rebrandly from "../assets/rebrandly.png";
+import edamam from "../assets/edamam.png";
 
 const projectList = [
   {
@@ -32,7 +33,7 @@ const projectList = [
     date: new Date("2020-05-09"),
     selected: false,
     description:
-      "This project was developed during the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
+      "This project was developed in the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
     images: [
       { id: 0, link: recipeSearchApp, alt: "Slide One" },
       { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
@@ -58,8 +59,13 @@ const projectList = [
           "Copy the shortened link to their clipboard in a single click",
       },
     ],
-    techs: [],
-    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      { id: 4, logo: edamam, alt: "Edamam Logo", title: "Edamam API" },
+    ],
   },
   {
     id: 1,
@@ -147,7 +153,12 @@ const projectList = [
         description: "Monitors the number of books to be read",
       },
     ],
-    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+    ],
   },
   {
     id: 3,
@@ -164,8 +175,30 @@ const projectList = [
     ],
     liveURL: "https://easybank-landing-page-lake.vercel.app/",
     repo: "https://github.com/hmdNetizen/EasyBank-Landing-Page",
-    functionalities: [],
-    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon, materialUI],
+    functionalities: [
+      {
+        id: 0,
+        description:
+          "View the optimal layout for the site depending on their device's screen size",
+      },
+      {
+        id: 1,
+        description:
+          "See hover states for all interactive elements on the page",
+      },
+    ],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      {
+        id: 4,
+        logo: materialUI,
+        alt: "Material-UI Logo",
+        title: "Material-UI",
+      },
+    ],
   },
   {
     id: 4,
@@ -174,7 +207,8 @@ const projectList = [
     alt: "Manage Landing Page",
     date: new Date("2020-07-31"),
     selected: false,
-    description: "This is the Manage Landing Page Project",
+    description:
+      "This is a challenge from Frontend Mentor. The task is to build this landing page and get it looking as close to the provided design template as possible",
     images: [
       { id: 0, link: manage, alt: "Slide One" },
       { id: 1, link: manage2, alt: "Slide Two" },
@@ -182,8 +216,44 @@ const projectList = [
     ],
     liveURL: "https://manage-landiing-page.netlify.app/",
     repo: "https://github.com/hmdNetizen/Manage-landing-page",
-    functionalities: [],
-    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon, materialUI],
+    functionalities: [
+      {
+        id: 0,
+        description:
+          "View the optimal layout for the site depending on their device's screen size",
+      },
+      {
+        id: 1,
+        description:
+          "See hover states for all interactive elements on the page",
+      },
+      {
+        id: 2,
+        description: "See all testimonials in a horizontal slider",
+      },
+
+      {
+        id: 4,
+        description:
+          "Receive an error message when the newsletter sign up `form` is submitted if:",
+        options: [
+          "The 'input' field is empty",
+          "The email address is not formatted correctly",
+        ],
+      },
+    ],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      {
+        id: 4,
+        logo: materialUI,
+        alt: "Material-UI Logo",
+        title: "Material-UI",
+      },
+    ],
   },
   {
     id: 5,
@@ -200,7 +270,12 @@ const projectList = [
     ],
     repo: "https://github.com/hmdNetizen/Quiz-Application",
     functionalities: [],
-    techlogo: [htmlIcon, cssIcon, jsIcon, reactIcon],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+    ],
   },
 ];
 

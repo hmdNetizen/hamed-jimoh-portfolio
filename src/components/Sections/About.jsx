@@ -298,7 +298,7 @@ const About = (props) => {
             background: theme.palette.common.gold,
             width: matchesSM ? "100%" : matchesMDOnly ? "8.333333%" : "25%",
             height: matchesXXXS ? "8vh" : matchesSM ? "10vh" : "100%",
-            zIndex: matchesSM ? 1301 : undefined,
+            zIndex: matchesSM ? 1301 : 1,
           }}
         >
           <Grid
