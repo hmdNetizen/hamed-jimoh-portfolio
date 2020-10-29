@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Services from "./components/Sections/Services";
 import Portfolio from "./components/Sections/Portfolio";
 import Resume from "./components/Sections/Resume";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
   sectionContainer: {
@@ -15,11 +16,20 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "5em",
     paddingBottom: "8em",
     clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)",
+
+    [theme.breakpoints.down("sm")]: {
+      clipPath: "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
+    },
+
+    [theme.breakpoints.down("xs")]: {
+      clipPath: "polygon(0 0, 100% 0, 100% 98%, 0 100%)",
+    },
   },
 }));
 
 function App() {
   const classes = useStyles();
+  const matchesXXS = useMediaQuery("(max-width:450px)");
   const [selectedItem, setselectedItem] = useState(0);
   const [pageCounter, setPageCounter] = useState(1);
   return (
@@ -32,7 +42,12 @@ function App() {
           pageCounter={pageCounter}
           setPageCounter={setPageCounter}
         />
-        <Grid container direction="column" className={classes.sectionContainer}>
+        <Grid
+          container
+          direction="column"
+          className={classes.sectionContainer}
+          style={{ paddingBottom: matchesXXS ? "12em" : undefined }}
+        >
           <Services setPageCounter={setPageCounter} />
           <Portfolio />
         </Grid>

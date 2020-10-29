@@ -30,6 +30,11 @@ const Theme = createMuiTheme({
       fontWeight: 700,
       color: tan,
     },
+    h3: {
+      color: carafe,
+      fontSize: "2.5rem",
+      fontWeight: 700,
+    },
     h4: {
       fontSize: "2.25rem",
       fontWeight: 700,
