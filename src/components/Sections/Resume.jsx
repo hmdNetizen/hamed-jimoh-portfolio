@@ -1,8 +1,13 @@
 import React from "react";
+import "../../components/progress.css";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import ProgressBar from "react-customizable-progressbar";
+
+import getTechProgress from "./../TechProgress";
+import ProgressIcon from "../ProgressIcon";
 
 const useStyles = makeStyles((theme) => ({
   resumeContainer: {
@@ -65,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
   experienceList: {
     fontSize: ".9rem",
     color: theme.palette.common.gold,
+
     "&:not(:last-child)": {
       marginBottom: ".5em",
     },
@@ -80,9 +86,32 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
   },
   educationTimeline: {
+    marginLeft: "7em",
+
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: "1em",
+    },
     "&::after": {
       height: "70%",
     },
+  },
+  indicator: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-55%)",
+    width: "100%",
+    height: "100%",
+    margin: "0 auto",
+    userSelect: "none",
+  },
+  progressTitle: {
+    margin: 0,
+    textAlign: "center",
+    color: theme.palette.common.gold,
   },
 }));
 
@@ -94,9 +123,10 @@ const Resume = () => {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesSMX = useMediaQuery("(max-width:768px)");
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-  //   const matchesXXS = useMediaQuery("(max-width:450px)");
+  const matchesXXS = useMediaQuery("(max-width:420px)");
   const matchesXXXS = useMediaQuery("(max-width:380px)");
   const matchesXXXXS = useMediaQuery("(max-width:340px)");
+
   return (
     <Grid
       container
@@ -110,18 +140,25 @@ const Resume = () => {
         item
         style={{
           marginTop: "20%",
-          paddingTop: "7em",
-          paddingLeft: matchesXS ? "7em" : "8.5em",
+          paddingTop: "5em",
           paddingRight: "2em",
+          paddingLeft: "2em",
         }}
       >
         <Grid container spacing={6}>
-          <Grid item lg className={classes.timeline}>
+          <Grid
+            item
+            lg
+            className={classes.timeline}
+            style={{
+              paddingLeft: matchesXXXS ? "6em" : matchesXS ? "7em" : "8.5em",
+            }}
+          >
             <Grid
               item
               style={{
                 marginBottom: "1em",
-                marginLeft: !matchesMD ? "-6em" : 0,
+                marginLeft: matchesXXXS ? "-5em" : matchesMD ? 0 : "-6em",
               }}
             >
               <Typography
@@ -386,7 +423,19 @@ const Resume = () => {
             </Grid>
           </Grid>
           <Grid item lg>
-            <Grid item style={{ marginBottom: "1em" }}>
+            <Grid
+              item
+              style={{
+                marginBottom: "1em",
+                marginLeft: matchesXXXS
+                  ? 0
+                  : matchesXS
+                  ? "5em"
+                  : matchesMD
+                  ? "7em"
+                  : 0,
+              }}
+            >
               <Typography
                 variant="h3"
                 style={{
@@ -437,7 +486,7 @@ const Resume = () => {
                           marginBottom: ".5em",
                         }}
                       >
-                        Political Science
+                        B.Sc. Political Science
                       </Typography>
                     </Grid>
                     <Grid item>
@@ -501,27 +550,69 @@ const Resume = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid
-              item
-              className={classes.timelineItem}
-              style={{ marginLeft: ".65em" }}
-            ></Grid>
+            {/* Skills and progress bar section */}
             <Grid
               item
               container
               direction="column"
+              alignItems="center"
               style={{ marginTop: "7em" }}
             >
-              <Grid item>
+              <Grid item style={{ marginLeft: matchesXS ? 0 : "-6em" }}>
                 <Typography
                   align={matchesXXXS ? "center" : undefined}
                   variant="h3"
                   style={{ fontSize: "1.75rem" }}
+                  gutterBottom
                 >
-                  Skills
+                  My toolbox of skills
                 </Typography>
               </Grid>
-              <Grid item container></Grid>
+              <Grid item>
+                <Typography
+                  variant="body1"
+                  paragraph
+                  align={matchesXS ? "center" : undefined}
+                  style={{ fontSize: "1rem", color: theme.palette.common.gold }}
+                >
+                  These are tools and technologies I am comfortable with:
+                </Typography>
+              </Grid>
+              {/* Progress Bar */}
+              <Grid
+                item
+                container
+                spacing={6}
+                justify={matchesMD ? "space-around" : undefined}
+              >
+                {getTechProgress().map((tech) => (
+                  <Grid item key={tech.id}>
+                    <ProgressBar
+                      radius={100}
+                      progress={tech.progress}
+                      strokeWidth={28}
+                      strokeColor={theme.palette.common.brown}
+                      strokeLinecap="butt"
+                      trackStrokeWidth={14}
+                      trackStrokeLinecap="butt"
+                      counterClockwise
+                      initialAnimation
+                      initialAnimationDelay={2}
+                    >
+                      <div className={classes.indicator}>
+                        <div>
+                          <ProgressIcon
+                            path={tech.path}
+                            fill={theme.palette.common.gold}
+                            width={matchesXXS ? 35 : 50}
+                          />
+                        </div>
+                      </div>
+                      <h4 className={classes.progressTitle}>{tech.title}</h4>
+                    </ProgressBar>
+                  </Grid>
+                ))}
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

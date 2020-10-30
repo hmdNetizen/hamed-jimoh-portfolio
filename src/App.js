@@ -46,7 +46,7 @@ function App() {
           container
           direction="column"
           className={classes.sectionContainer}
-          style={{ paddingBottom: matchesXXS ? "12em" : undefined }}
+          style={{ paddingBottom: matchesXXS ? "6em" : undefined }}
         >
           <Services setPageCounter={setPageCounter} />
           <Portfolio />

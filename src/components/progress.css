@@ -1,0 +1,19 @@
+.RCP {
+  width: 150px !important;
+}
+
+.RCP svg {
+  width: 150px;
+  height: 150px;
+}
+
+@media screen and (max-width: 420px) {
+  .RCP {
+    width: 100px !important;
+  }
+
+  .RCP svg {
+    width: 100px;
+    height: 100px;
+  }
+}
