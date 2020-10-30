@@ -8,6 +8,8 @@ import ProgressBar from "react-customizable-progressbar";
 
 import getTechProgress from "./../TechProgress";
 import ProgressIcon from "../ProgressIcon";
+import HorizontalProgress from "../HorizontalProgress";
+import "../../components/horizontalProgress.css";
 
 const useStyles = makeStyles((theme) => ({
   resumeContainer: {
@@ -86,7 +88,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
   },
   educationTimeline: {
-    marginLeft: "7em",
+    marginLeft: 0,
+
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "7em",
+    },
 
     [theme.breakpoints.down("xs")]: {
       marginLeft: "1em",
@@ -118,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
 const Resume = () => {
   const classes = useStyles();
   const theme = useTheme();
+  const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   //   const matchesMDX = useMediaQuery("(max-width:978px)");
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
@@ -140,7 +147,7 @@ const Resume = () => {
         item
         style={{
           marginTop: "20%",
-          paddingTop: "5em",
+          paddingTop: !matchesMD ? "7em" : "5em",
           paddingRight: "2em",
           paddingLeft: "2em",
         }}
@@ -171,6 +178,7 @@ const Resume = () => {
                 Experience
               </Typography>
             </Grid>
+            {/* First work experience section */}
             <Grid container className={classes.timelineBody}>
               <Grid item>
                 <Grid container className={classes.timelineItem}>
@@ -255,6 +263,7 @@ const Resume = () => {
                 </Grid>
               </Grid>
             </Grid>
+            {/* Second work experience section */}
             <Grid container className={classes.timelineBody}>
               <Grid item>
                 <Grid container className={classes.timelineItem}>
@@ -341,6 +350,7 @@ const Resume = () => {
                 </Grid>
               </Grid>
             </Grid>
+            {/* Third work experience section */}
             <Grid container className={classes.timelineBody}>
               <Grid item>
                 <Grid container className={classes.timelineItem}>
@@ -556,7 +566,8 @@ const Resume = () => {
               container
               direction="column"
               alignItems="center"
-              style={{ marginTop: "7em" }}
+              justify="center"
+              style={{ marginTop: "5em" }}
             >
               <Grid item style={{ marginLeft: matchesXS ? 0 : "-6em" }}>
                 <Typography
@@ -583,7 +594,13 @@ const Resume = () => {
                 item
                 container
                 spacing={6}
-                justify={matchesMD ? "space-around" : undefined}
+                justify={
+                  matchesMD
+                    ? "space-around"
+                    : matchesLG
+                    ? "space-between"
+                    : undefined
+                }
               >
                 {getTechProgress().map((tech) => (
                   <Grid item key={tech.id}>
@@ -599,7 +616,14 @@ const Resume = () => {
                       initialAnimation
                       initialAnimationDelay={2}
                     >
-                      <div className={classes.indicator}>
+                      <div
+                        className={classes.indicator}
+                        style={{
+                          transform: matchesXXS
+                            ? "translateY(-57%)"
+                            : undefined,
+                        }}
+                      >
                         <div>
                           <ProgressIcon
                             path={tech.path}
@@ -614,6 +638,45 @@ const Resume = () => {
                 ))}
               </Grid>
             </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        style={{
+          paddingTop: "3em",
+          paddingLeft: matchesXS ? "2em" : "5em",
+          paddingRight: matchesXS ? "2em" : "5em",
+        }}
+      >
+        <Grid item>
+          <Typography
+            variant="h3"
+            gutterBottom
+            style={{ fontSize: "1.75rem", marginBottom: "1em" }}
+          >
+            Soft Skills
+          </Typography>
+        </Grid>
+        <Grid item container justify={matchesSM ? "center" : "space-around"}>
+          <Grid item style={{ marginBottom: "3em" }}>
+            <HorizontalProgress done={80} attribute="Creativity" />
+          </Grid>
+          <Grid item style={{ marginBottom: "3em" }}>
+            <HorizontalProgress done={99} attribute="Integrity" />
+          </Grid>
+          <Grid item style={{ marginBottom: "3em" }}>
+            <HorizontalProgress done={85} attribute="Collaboration" />
+          </Grid>
+          <Grid item style={{ marginBottom: "3em" }}>
+            <HorizontalProgress done={70} attribute="Problem-Solving" />
+          </Grid>
+          <Grid item style={{ marginBottom: "3em" }}>
+            <HorizontalProgress done={87} attribute="Empathy" />
+          </Grid>
+          <Grid item>
+            <HorizontalProgress done={82} attribute="Organisation" />
           </Grid>
         </Grid>
       </Grid>
