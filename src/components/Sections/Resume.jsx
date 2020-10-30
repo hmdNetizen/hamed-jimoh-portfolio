@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "25%",
     paddingBottom: "10em",
     marginTop: "-20%",
-    background: theme.palette.common.tan,
+    background: theme.palette.common.dollar,
 
     [theme.breakpoints.down("md")]: {
       paddingLeft: "8.33333%",
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       height: 35,
       borderRadius: "50%",
       border: `4px solid ${theme.palette.common.gold}`,
-      background: theme.palette.common.tan,
+      background: theme.palette.common.dollar,
       position: "absolute",
       top: ".25em",
       left: "-3em",
