@@ -31,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
   aboutContainer: {
     height: "100vh",
     width: "100%",
+
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
+    },
   },
 
   gridUtils: {
@@ -40,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
   leftGrid: {
     [theme.breakpoints.down("sm")]: {
-      height: "10vh",
+      height: 59,
     },
   },
 
@@ -60,9 +64,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.down("xs")]: {
-      marginTop: "10vh",
+      marginTop: 59,
       paddingLeft: "2.5em",
       paddingRight: "2.5em",
+      paddingTop: "4em",
+      paddingBottom: "4em",
     },
   },
 
@@ -252,9 +258,11 @@ const About = (props) => {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const matchesXSS = useMediaQuery("(max-width:465px)"); //if screen width is equals or less than 465px
   const matchesXXS = useMediaQuery("(max-width:450px)"); //if screen width is equals or less than 450px
+  const matchesXXSS = useMediaQuery("(max-width:400px)"); //if screen width is equals or less than 400px
   const matchesXXXS = useMediaQuery("(max-width:320px)"); //if screen width is equals or less than 320px
-  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent); //For smooth swipe experience for iOS devices
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -560,11 +568,24 @@ const About = (props) => {
         md={5}
         className={`${classes.gridUtils} ${classes.middleGrid}`}
         style={{
-          paddingTop: matchesXXXS && "1em",
-          paddingBottom: matchesXXXS && "1em",
-          paddingLeft: matchesXXXS && "1.5em",
-          paddingRight: matchesXXXS && "1.5em",
-          marginTop: matchesXXXS && "8vh",
+          paddingLeft: matchesXXSS && "1.5em",
+          paddingRight: matchesXXSS && "1.5em",
+          paddingTop: matchesXXXS
+            ? "2.25em"
+            : matchesXXSS
+            ? "3.25em"
+            : matchesXXS
+            ? "3em"
+            : matchesXSS
+            ? "2em"
+            : undefined,
+          paddingBottom: matchesXXXS
+            ? "2.25em"
+            : matchesXXSS
+            ? "2.5em"
+            : matchesXXS
+            ? "4em"
+            : undefined,
         }}
       >
         <Hidden mdUp>
@@ -605,7 +626,7 @@ const About = (props) => {
             Hello, my name is
           </Typography>
         </Grid>
-        <Grid item>
+        <Grid item style={{ marginTop: matchesXXS ? ".75em" : undefined }}>
           <Typography
             variant="h1"
             paragraph
@@ -625,8 +646,9 @@ const About = (props) => {
         <Grid
           item
           style={{
-            marginTop: "2em",
-            marginBottom: matchesXXS ? ".5em" : matchesSM ? "1em" : "4em",
+            marginTop: matchesXS ? "3em" : "2em",
+            marginBottom: matchesSM ? "3em" : "4em",
+            maxWidth: matchesXS ? "25em" : matchesSM ? "35em" : undefined,
           }}
         >
           <Typography variant="body1" paragraph className={classes.profileText}>
