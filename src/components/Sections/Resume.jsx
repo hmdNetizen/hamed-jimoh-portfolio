@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       paddingLeft: 0,
+      marginTop: "-25%",
     },
   },
   timelineBody: {
