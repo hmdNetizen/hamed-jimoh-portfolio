@@ -1,12 +1,13 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
     paddingLeft: "25%",
     paddingTop: "7em",
+
     marginTop: "-10%",
     height: "960px",
     background: theme.palette.common.darkBrown,
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = () => {
   const classes = useStyles();
+  //   const theme = useTheme();
   return (
     <Grid
       container
