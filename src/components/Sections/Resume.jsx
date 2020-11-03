@@ -128,7 +128,8 @@ const Resume = () => {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   //   const matchesMDX = useMediaQuery("(max-width:978px)");
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesSMX = useMediaQuery("(max-width:768px)");
+  const matchesSMX = useMediaQuery("(max-width:890px)");
+  const matchesSMXX = useMediaQuery("(max-width:768px)");
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXS = useMediaQuery("(max-width:420px)");
   const matchesXXXS = useMediaQuery("(max-width:380px)");
@@ -225,7 +226,7 @@ const Resume = () => {
                         style={{
                           margin: 0,
                           paddingLeft: "1em",
-                          maxWidth: matchesSMX
+                          maxWidth: matchesSMXX
                             ? "35em"
                             : matchesSM
                             ? undefined
@@ -310,7 +311,7 @@ const Resume = () => {
                         style={{
                           margin: 0,
                           paddingLeft: "1em",
-                          maxWidth: matchesSMX
+                          maxWidth: matchesSMXX
                             ? "35em"
                             : matchesSM
                             ? undefined
@@ -397,7 +398,7 @@ const Resume = () => {
                         style={{
                           margin: 0,
                           paddingLeft: "1em",
-                          maxWidth: matchesSMX
+                          maxWidth: matchesSMXX
                             ? "35em"
                             : matchesSM
                             ? undefined
@@ -648,6 +649,7 @@ const Resume = () => {
           paddingTop: "3em",
           paddingLeft: matchesXS ? "2em" : "5em",
           paddingRight: matchesXS ? "2em" : "5em",
+          paddingBottom: matchesSMX ? "3em" : undefined,
         }}
       >
         <Grid item>
@@ -659,7 +661,7 @@ const Resume = () => {
             Soft Skills
           </Typography>
         </Grid>
-        <Grid item container justify={matchesSM ? "center" : "space-around"}>
+        <Grid item container justify={matchesSMX ? "center" : "space-around"}>
           <Grid item style={{ marginBottom: "3em" }}>
             <HorizontalProgress done={80} attribute="Creativity" />
           </Grid>

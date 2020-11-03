@@ -16,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "8.33333%",
     },
     [theme.breakpoints.down("sm")]: {
-      paddingLeft: 0,
+      marginTop: "-17%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "-25%",
     },
   },
 }));
