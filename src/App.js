@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import { ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Theme from "./components/Theme";
@@ -9,21 +10,18 @@ import Services from "./components/Sections/Services";
 import Portfolio from "./components/Sections/Portfolio";
 import Resume from "./components/Sections/Resume";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Contact from "./components/Sections/Contact";
+
+import jss from "jss";
+import preset from "jss-preset-default";
+
+jss.setup(preset());
 
 const useStyles = makeStyles((theme) => ({
   sectionContainer: {
     background: "#423125",
     paddingTop: "5em",
     paddingBottom: "8em",
-    clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)",
-
-    [theme.breakpoints.down("sm")]: {
-      clipPath: "polygon(0 0, 100% 0, 100% 97%, 0 100%)",
-    },
-
-    [theme.breakpoints.down("xs")]: {
-      clipPath: "polygon(0 0, 100% 0, 100% 98%, 0 100%)",
-    },
   },
 }));
 
@@ -45,13 +43,14 @@ function App() {
         <Grid
           container
           direction="column"
-          className={classes.sectionContainer}
+          className={`${classes.sectionContainer} section-clip`}
           style={{ paddingBottom: matchesXXS ? "6em" : undefined }}
         >
           <Services setPageCounter={setPageCounter} />
           <Portfolio />
         </Grid>
         <Resume />
+        <Contact />
       </Grid>
     </ThemeProvider>
   );

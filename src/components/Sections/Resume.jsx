@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       paddingLeft: 0,
-      marginTop: "-25%",
     },
   },
   timelineBody: {
@@ -79,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
   role: {
     color: theme.palette.common.brown,
-    fontSize: "1.25rem",
+    fontSize: "1.2rem",
     fontWeight: 500,
   },
   organisation: {
@@ -380,7 +379,7 @@ const Resume = () => {
                         gutterBottom
                         className={classes.organisation}
                       >
-                        Anglican Girls Secondary School, Nnewi
+                        Anglican Girls Secondary School, Nnewi (NYSC)
                       </Typography>
                     </Grid>
                     <Grid item>

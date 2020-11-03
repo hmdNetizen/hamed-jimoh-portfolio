@@ -568,12 +568,13 @@ const About = (props) => {
         md={5}
         className={`${classes.gridUtils} ${classes.middleGrid}`}
         style={{
+          marginTop: matchesXXXS ? 58 : undefined,
           paddingLeft: matchesXXSS && "1.5em",
           paddingRight: matchesXXSS && "1.5em",
           paddingTop: matchesXXXS
             ? "2.25em"
             : matchesXXSS
-            ? "3.25em"
+            ? "3.5em"
             : matchesXXS
             ? "3em"
             : matchesXSS
@@ -582,7 +583,7 @@ const About = (props) => {
           paddingBottom: matchesXXXS
             ? "2.25em"
             : matchesXXSS
-            ? "2.5em"
+            ? "3.5em"
             : matchesXXS
             ? "4em"
             : undefined,
