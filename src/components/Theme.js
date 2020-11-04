@@ -91,6 +91,34 @@ const Theme = createMuiTheme({
         },
       },
     },
+    MuiInputLabel: {
+      root: {
+        fontSize: "1rem",
+        color: tan,
+        "&$focused": {
+          color: tan,
+        },
+      },
+    },
+    MuiInput: {
+      underline: {
+        "&:before": {
+          borderBottom: `2px solid ${tan}`,
+        },
+        "&:hover:not($disabled):not($focused):not($error):before": {
+          borderBottom: `2px solid ${tan}`,
+        },
+        "&:after": {
+          borderBottomColor: tan,
+        },
+      },
+    },
+    MuiInputBase: {
+      root: {
+        color: sandDollar,
+        fontSize: "1rem",
+      },
+    },
   },
 });
 

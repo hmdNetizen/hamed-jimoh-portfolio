@@ -262,6 +262,7 @@ const About = (props) => {
   const matchesXXS = useMediaQuery("(max-width:450px)"); //if screen width is equals or less than 450px
   const matchesXXSS = useMediaQuery("(max-width:400px)"); //if screen width is equals or less than 400px
   const matchesXXXS = useMediaQuery("(max-width:320px)"); //if screen width is equals or less than 320px
+  const matchesXXXSS = useMediaQuery("(max-width:290px)"); //if screen width is equals or less than 320px
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent); //For smooth swipe experience for iOS devices
 
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -306,7 +307,7 @@ const About = (props) => {
             background: theme.palette.common.gold,
             width: matchesSM ? "100%" : matchesMDOnly ? "8.333333%" : "25%",
             height: matchesXXXS ? "8vh" : matchesSM ? "10vh" : "100%",
-            zIndex: matchesSM ? 1301 : 1,
+            zIndex: matchesSM ? 1301 : 5,
           }}
         >
           <Grid
@@ -568,7 +569,7 @@ const About = (props) => {
         md={5}
         className={`${classes.gridUtils} ${classes.middleGrid}`}
         style={{
-          marginTop: matchesXXXS ? 58 : undefined,
+          marginTop: matchesXXXSS ? 35 : matchesXXXS ? 58 : undefined,
           paddingLeft: matchesXXSS && "1.5em",
           paddingRight: matchesXXSS && "1.5em",
           paddingTop: matchesXXXS

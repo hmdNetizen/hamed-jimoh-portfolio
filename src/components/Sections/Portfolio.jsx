@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
       "radial-gradient(circle, rgba(208,180,159,0.9724264705882353) 0%, rgba(164,117,81,1) 100%)",
     color: theme.palette.common.dollar,
     position: "absolute",
-    zIndex: 1,
+    zIndex: 9,
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-end",

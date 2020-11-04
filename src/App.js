@@ -22,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#423125",
     paddingTop: "5em",
     paddingBottom: "8em",
+    position: "relative",
+    zIndex: 1,
   },
 }));
 

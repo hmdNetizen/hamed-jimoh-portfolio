@@ -100,7 +100,9 @@ const Services = ({ setPageCounter }) => {
       container
       direction="column"
       id="servicesContainer"
-      style={{ paddingLeft: matchesSM ? 0 : matchesMD ? "8.33333%" : "25%" }}
+      style={{
+        paddingLeft: matchesSM ? 0 : matchesMD ? "8.33333%" : "25%",
+      }}
     >
       <Grid
         container

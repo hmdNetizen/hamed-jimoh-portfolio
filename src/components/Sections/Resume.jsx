@@ -139,7 +139,7 @@ const Resume = () => {
     <Grid
       container
       direction="column"
-      className={classes.resumeContainer}
+      className={`${classes.resumeContainer} section-clip`}
       style={{
         marginTop: matchesXXXXS ? "-40%" : matchesXXXS ? "-30%" : undefined,
       }}
