@@ -4,8 +4,10 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import chatIcon from "../../assets/chat.svg";
+import SendIcon from "../SendIcon";
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
@@ -22,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       marginTop: "-17%",
+      paddingLeft: 0,
     },
     [theme.breakpoints.down("xs")]: {
       marginTop: "-25%",
@@ -45,6 +48,12 @@ const useStyles = makeStyles((theme) => ({
 const Contact = () => {
   const classes = useStyles();
   const theme = useTheme();
+
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const matchesXXS = useMediaQuery("(max-width: 430px)");
+  const matchesXXSS = useMediaQuery("(max-width: 350px)");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -82,10 +91,12 @@ const Contact = () => {
       direction="column"
       alignItems="center"
       className={`${classes.contactContainer}`}
+      style={{ marginTop: matchesXXSS ? "-45%" : undefined }}
     >
       <Grid item>
         <Typography
           variant="h4"
+          align="center"
           gutterBottom
           style={{ fontSize: "1.75rem", marginBottom: ".75em" }}
         >
@@ -117,12 +128,24 @@ const Contact = () => {
           direction="column"
           alignItems="center"
           style={{
-            paddingTop: "3em",
-            paddingBottom: "5em",
-            paddingLeft: "5em",
-            paddingRight: "5em",
+            paddingTop: matchesXXS ? "1.5em" : "3em",
+            paddingBottom: matchesXXS ? "1.5em" : "5em",
+            paddingLeft: matchesXXS
+              ? "1em"
+              : matchesXS
+              ? "2em"
+              : matchesSM
+              ? "3em"
+              : "5em",
+            paddingRight: matchesXXS
+              ? "1em"
+              : matchesXS
+              ? "2em"
+              : matchesSM
+              ? "3em"
+              : "5em",
             border: `.25px solid ${theme.palette.common.brown}`,
-            width: 650,
+            maxWidth: matchesSM ? "100%" : 650,
             borderRadius: 5,
           }}
         >
@@ -133,7 +156,7 @@ const Contact = () => {
               name="name"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              style={{ width: 350 }}
+              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
             />
           </Grid>
           <Grid item style={{ marginBottom: "1em" }}>
@@ -145,7 +168,7 @@ const Contact = () => {
               helperText={emailHelper}
               value={email}
               onChange={validateEmail}
-              style={{ width: 350 }}
+              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
             />
           </Grid>
           <Grid item style={{ marginBottom: "2em" }}>
@@ -155,7 +178,7 @@ const Contact = () => {
               name="phone"
               value={phone}
               onChange={(event) => setPhone(event.target.value)}
-              style={{ width: 350 }}
+              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
             />
           </Grid>
           <Grid item style={{ marginBottom: "1em" }}>
@@ -174,14 +197,17 @@ const Contact = () => {
               value={message}
               InputProps={{ disableUnderline: true }}
               onChange={(event) => setMessage(event.target.value)}
-              style={{ width: 350 }}
               rows={10}
               multiline
               placeholder="Shoot me a message..."
               className={classes.message}
+              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
             />
           </Grid>
-          <Grid item style={{ width: 350 }}>
+          <Grid
+            item
+            style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
+          >
             <Button
               type="submit"
               disabled={
@@ -191,6 +217,11 @@ const Contact = () => {
               className={classes.button}
             >
               Submit
+              <SendIcon
+                disabled={
+                  name.trim() === "" || emailHelper !== "" || message.length < 1
+                }
+              />
             </Button>
           </Grid>
         </Grid>
