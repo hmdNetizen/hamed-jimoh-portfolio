@@ -14,6 +14,7 @@ import Contact from "./components/Sections/Contact";
 
 import jss from "jss";
 import preset from "jss-preset-default";
+import Footer from "./components/Sections/Footer";
 
 jss.setup(preset());
 
@@ -53,6 +54,7 @@ function App() {
         </Grid>
         <Resume />
         <Contact />
+        <Footer />
       </Grid>
     </ThemeProvider>
   );

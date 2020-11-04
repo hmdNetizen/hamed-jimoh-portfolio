@@ -5,6 +5,8 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import MuiAlert from "@material-ui/lab/Alert";
+import Snackbar from "@material-ui/core/Snackbar";
 
 import chatIcon from "../../assets/chat.svg";
 import SendIcon from "../SendIcon";
@@ -59,6 +61,7 @@ const Contact = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [emailHelper, setEmailHelper] = useState("");
+  const [open, setOpen] = useState(false);
 
   const validateEmail = (event) => {
     let valid;
@@ -77,12 +80,23 @@ const Contact = () => {
     event.preventDefault();
 
     if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
-      console.log("form submitted");
+      setOpen(true);
     }
     setName("");
     setEmail("");
     setPhone("");
     setMessage("");
+  };
+
+  const Alert = (props) => (
+    <MuiAlert elevation={0} variant="filled" {...props} />
+  );
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
   };
 
   return (
@@ -226,6 +240,16 @@ const Contact = () => {
           </Grid>
         </Grid>
       </form>
+      <Snackbar
+        open={open}
+        autoHideDuration={5000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert onClose={handleClose} severity="success">
+          Message sent successfully
+        </Alert>
+      </Snackbar>
     </Grid>
   );
 };
