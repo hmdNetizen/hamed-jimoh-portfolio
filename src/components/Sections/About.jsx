@@ -306,7 +306,7 @@ const About = (props) => {
             position: "fixed",
             background: theme.palette.common.gold,
             width: matchesSM ? "100%" : matchesMDOnly ? "8.333333%" : "25%",
-            height: matchesXXXS ? "8vh" : matchesSM ? "10vh" : "100%",
+            height: matchesSM ? 59 : "100%",
             zIndex: matchesSM ? 1301 : 5,
           }}
         >
@@ -569,7 +569,7 @@ const About = (props) => {
         md={5}
         className={`${classes.gridUtils} ${classes.middleGrid}`}
         style={{
-          marginTop: matchesXXXSS ? 35 : matchesXXXS ? 58 : undefined,
+          // marginTop: matchesXXXSS ? 35 : matchesXXXS ? 58 : undefined,
           paddingLeft: matchesXXSS && "1.5em",
           paddingRight: matchesXXSS && "1.5em",
           paddingTop: matchesXXXS

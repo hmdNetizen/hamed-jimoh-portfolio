@@ -5,8 +5,9 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import MuiAlert from "@material-ui/lab/Alert";
+import Alert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import chatIcon from "../../assets/chat.svg";
 import SendIcon from "../SendIcon";
@@ -45,6 +46,26 @@ const useStyles = makeStyles((theme) => ({
       background: theme.palette.secondary.dark,
     },
   },
+  alert: {
+    background: theme.palette.common.dollar,
+
+    "&: .MuiAlert-icon": {
+      fill: "red",
+    },
+  },
+  alertMessage: {
+    color: theme.palette.common.darkBrown,
+  },
+  alertIcon: {
+    "& > *": {
+      fill: theme.palette.common.darkBrown,
+    },
+  },
+  closeAlert: {
+    "& .MuiSvgIcon-root": {
+      fill: theme.palette.common.darkBrown,
+    },
+  },
 }));
 
 const Contact = () => {
@@ -62,6 +83,7 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [emailHelper, setEmailHelper] = useState("");
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const validateEmail = (event) => {
     let valid;
@@ -80,17 +102,15 @@ const Contact = () => {
     event.preventDefault();
 
     if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
+      setLoading(true);
       setOpen(true);
     }
     setName("");
     setEmail("");
     setPhone("");
     setMessage("");
+    setLoading(false);
   };
-
-  const Alert = (props) => (
-    <MuiAlert elevation={0} variant="filled" {...props} />
-  );
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -230,7 +250,7 @@ const Contact = () => {
               variant="contained"
               className={classes.button}
             >
-              Submit
+              {loading ? <CircularProgress /> : "Submit"}
               <SendIcon
                 disabled={
                   name.trim() === "" || emailHelper !== "" || message.length < 1
@@ -246,8 +266,17 @@ const Contact = () => {
         onClose={handleClose}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert onClose={handleClose} severity="success">
-          Message sent successfully
+        <Alert
+          onClose={handleClose}
+          variant="standard"
+          classes={{
+            standardSuccess: classes.alert,
+            message: classes.alertMessage,
+            icon: classes.alertIcon,
+            action: classes.closeAlert,
+          }}
+        >
+          Message sent successfully.
         </Alert>
       </Snackbar>
     </Grid>

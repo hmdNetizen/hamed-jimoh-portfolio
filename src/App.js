@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+// import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Theme from "./components/Theme";
@@ -12,11 +13,7 @@ import Resume from "./components/Sections/Resume";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Contact from "./components/Sections/Contact";
 
-import jss from "jss";
-import preset from "jss-preset-default";
 import Footer from "./components/Sections/Footer";
-
-jss.setup(preset());
 
 const useStyles = makeStyles((theme) => ({
   sectionContainer: {
