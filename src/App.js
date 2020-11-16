@@ -14,6 +14,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Contact from "./components/Sections/Contact";
 
 import Footer from "./components/Sections/Footer";
+import Skills from "./components/Sections/Skills";
 
 const useStyles = makeStyles((theme) => ({
   sectionContainer: {
@@ -22,6 +23,20 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "8em",
     position: "relative",
     zIndex: 1,
+  },
+  resumeContainer: {
+    paddingLeft: "25%",
+    paddingBottom: "10em",
+    marginTop: "-20%",
+    background: "#E4D4C8",
+
+    [theme.breakpoints.down("md")]: {
+      paddingLeft: "8.33333%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: 0,
+      marginTop: "-25%",
+    },
   },
 }));
 
@@ -49,7 +64,15 @@ function App() {
           <Services setPageCounter={setPageCounter} />
           <Portfolio />
         </Grid>
-        <Resume />
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          className={`${classes.resumeContainer} section-clip`}
+        >
+          <Resume />
+          <Skills />
+        </Grid>
         <Contact />
         <Footer />
       </Grid>

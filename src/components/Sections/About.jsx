@@ -27,6 +27,9 @@ import portfolio from "../../assets/portfolio.svg";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
+import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
+
 const useStyles = makeStyles((theme) => ({
   aboutContainer: {
     height: "100vh",
@@ -629,21 +632,23 @@ const About = (props) => {
           </Typography>
         </Grid>
         <Grid item style={{ marginTop: matchesXXS ? ".75em" : undefined }}>
-          <Typography
-            variant="h1"
-            paragraph
-            className={classes.nameStyle}
-            style={{
-              fontSize: matchesXXXS
-                ? "1.75rem"
-                : matchesXXS
-                ? "2rem"
-                : undefined,
-              margin: matchesXS ? 0 : undefined,
-            }}
-          >
-            Hamed Jimoh
-          </Typography>
+          <Zoom top>
+            <Typography
+              variant="h1"
+              paragraph
+              className={classes.nameStyle}
+              style={{
+                fontSize: matchesXXXS
+                  ? "1.75rem"
+                  : matchesXXS
+                  ? "2rem"
+                  : undefined,
+                margin: matchesXS ? 0 : undefined,
+              }}
+            >
+              Hamed Jimoh
+            </Typography>
+          </Zoom>
         </Grid>
         <Grid
           item
@@ -653,35 +658,43 @@ const About = (props) => {
             maxWidth: matchesXS ? "25em" : matchesSM ? "35em" : undefined,
           }}
         >
-          <Typography variant="body1" paragraph className={classes.profileText}>
-            A frontend web developer from Lagos, Nigeria. I spend a lot of my
-            time learning and building stuff for the web through carefully
-            crafted code and user-friendly design and implementation.
-          </Typography>
+          <Fade bottom>
+            <Typography
+              variant="body1"
+              paragraph
+              className={classes.profileText}
+            >
+              A frontend web developer from Lagos, Nigeria. I spend a lot of my
+              time learning and building stuff for the web through carefully
+              crafted code and user-friendly design and implementation.
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item style={{ marginLeft: matchesXXXS && "-1em" }}>
           <Grid container justify={matchesMDOnly ? undefined : "center"}>
             {socials.map((social) => (
-              <Grid item key={social.id}>
-                <Tooltip
-                  title={social.title}
-                  arrow
-                  className={classes.tooltip}
-                  {...rest}
-                >
-                  <a
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+              <Fade top>
+                <Grid item key={social.id}>
+                  <Tooltip
+                    title={social.title}
+                    arrow
+                    className={classes.tooltip}
+                    {...rest}
                   >
-                    <IconButton>
-                      <SvgIcon color="primary" fontSize="large">
-                        <path d={social.path} />
-                      </SvgIcon>
-                    </IconButton>
-                  </a>
-                </Tooltip>
-              </Grid>
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <IconButton>
+                        <SvgIcon color="primary" fontSize="large">
+                          <path d={social.path} />
+                        </SvgIcon>
+                      </IconButton>
+                    </a>
+                  </Tooltip>
+                </Grid>
+              </Fade>
             ))}
           </Grid>
         </Grid>

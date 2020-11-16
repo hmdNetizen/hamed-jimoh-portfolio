@@ -15,8 +15,12 @@ import SendIcon from "../SendIcon";
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
     paddingLeft: "25%",
-    paddingTop: "12em",
+    paddingTop: "17em",
     paddingBottom: "5em",
+
+    [theme.breakpoints.down("lg")]: {
+      paddingTop: "12em",
+    },
 
     marginTop: "-10%",
     background: theme.palette.common.darkBrown,
@@ -72,6 +76,7 @@ const Contact = () => {
   const classes = useStyles();
   const theme = useTheme();
 
+  const matchesXL = useMediaQuery(theme.breakpoints.down("xl"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXS = useMediaQuery("(max-width: 430px)");

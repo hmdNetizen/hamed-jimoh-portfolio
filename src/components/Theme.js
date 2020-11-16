@@ -83,6 +83,11 @@ const Theme = createMuiTheme({
       "spacing-xs-3": {
         width: "100%",
       },
+      "spacing-xs-6": {
+        width: "100%",
+        margin: 0,
+        paddingRight: 0,
+      },
     },
     MuiCssBaseline: {
       "@global": {

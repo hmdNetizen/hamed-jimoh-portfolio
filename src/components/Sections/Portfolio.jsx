@@ -15,6 +15,8 @@ import SelectedProject from "./SelectedProject";
 
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 
+import Zoom from "react-reveal/Zoom";
+
 const useStyles = makeStyles((theme) => ({
   filterIcon: {
     fill: theme.palette.common.dollar,
@@ -338,27 +340,28 @@ const Portfolio = () => {
               marginTop: matchesSM ? "1em" : 0,
               marginBottom: matchesSM ? "1em" : 0,
             }}
-            className="animate__animated animate__zoomIn"
             onClick={() => {
               handleProjectSelect(project.id);
               setIsSelected(true);
             }}
           >
-            <Card className={classes.card}>
-              <img
-                src={project.img}
-                alt={project.alt}
-                className={classes.projectImg}
-              />
-              <CardContent className={classes.projectText}>
-                <Typography
-                  variant="h4"
-                  style={{ fontWeight: 700, textAlign: "center" }}
-                >
-                  {project.name}
-                </Typography>
-              </CardContent>
-            </Card>
+            <Zoom top>
+              <Card className={classes.card}>
+                <img
+                  src={project.img}
+                  alt={project.alt}
+                  className={classes.projectImg}
+                />
+                <CardContent className={classes.projectText}>
+                  <Typography
+                    variant="h4"
+                    style={{ fontWeight: 700, textAlign: "center" }}
+                  >
+                    {project.name}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Zoom>
           </Grid>
         ))}
       </Grid>
