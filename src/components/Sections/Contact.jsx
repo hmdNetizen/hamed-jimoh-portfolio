@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   message: {
-    border: `2px solid ${theme.palette.common.tan}`,
+    border: `2px solid ${theme.palette.common.gold}`,
     borderRadius: 5,
   },
   button: {
@@ -181,7 +181,14 @@ const Contact = () => {
         </Grid>
       </Grid>
       <Slide left>
-        <form onSubmit={handleFormSubmit}>
+        <form
+          onSubmit={handleFormSubmit}
+          style={{
+            background: theme.palette.common.dollar,
+            border: `.25px solid ${theme.palette.common.brown}`,
+            borderRadius: 5,
+          }}
+        >
           <Grid
             item
             container
@@ -204,9 +211,7 @@ const Contact = () => {
                 : matchesSM
                 ? "3em"
                 : "5em",
-              border: `.25px solid ${theme.palette.common.brown}`,
               maxWidth: matchesSM ? "100%" : 650,
-              borderRadius: 5,
             }}
           >
             <Grid item style={{ marginBottom: "1em" }}>

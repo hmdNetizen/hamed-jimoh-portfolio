@@ -108,19 +108,19 @@ const Theme = createMuiTheme({
     MuiInput: {
       underline: {
         "&:before": {
-          borderBottom: `2px solid ${tan}`,
+          borderBottom: `2px solid ${carafe}`,
         },
         "&:hover:not($disabled):not($focused):not($error):before": {
-          borderBottom: `2px solid ${tan}`,
+          borderBottom: `2px solid ${carafe}`,
         },
         "&:after": {
-          borderBottomColor: tan,
+          borderBottomColor: carafe,
         },
       },
     },
     MuiInputBase: {
       root: {
-        color: sandDollar,
+        color: carafe,
         fontSize: "1rem",
       },
     },
