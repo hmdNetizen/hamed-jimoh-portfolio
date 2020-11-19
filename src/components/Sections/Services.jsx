@@ -101,6 +101,7 @@ const Services = ({ setPageCounter }) => {
       id="services"
       style={{
         paddingLeft: matchesSM ? 0 : matchesMD ? "8.33333%" : "25%",
+        paddingTop: "5em",
       }}
     >
       <Grid
@@ -108,7 +109,6 @@ const Services = ({ setPageCounter }) => {
         direction="column"
         alignItems="center"
         style={{
-          paddingBottom: "5em",
           paddingLeft: matchesXS ? "1em" : "3em",
           paddingRight: matchesXS ? "1em" : "3em",
         }}
@@ -212,6 +212,7 @@ const Services = ({ setPageCounter }) => {
                 variant="outlined"
                 className={classes.button}
                 style={{ padding: matchesXXXS && ".5em 1em" }}
+                href="#portfolio"
               >
                 Check my Portfolio
               </Button>

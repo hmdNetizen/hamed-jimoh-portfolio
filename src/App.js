@@ -19,7 +19,6 @@ import Skills from "./components/Sections/Skills";
 const useStyles = makeStyles((theme) => ({
   sectionContainer: {
     background: "#423125",
-    paddingTop: "5em",
     paddingBottom: "8em",
     position: "relative",
     zIndex: 1,

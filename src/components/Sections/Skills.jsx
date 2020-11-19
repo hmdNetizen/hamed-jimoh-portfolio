@@ -66,7 +66,7 @@ const Skills = () => {
       direction="column"
       justify="center"
       style={{
-        marginTop: "5em",
+        paddingTop: "5em",
       }}
     >
       <Grid item>

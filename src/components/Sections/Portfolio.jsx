@@ -190,6 +190,7 @@ const Portfolio = () => {
         justify="space-between"
         id="portfolio"
         style={{
+          paddingTop: "5em",
           paddingLeft: "2em",
           paddingRight: "2em",
         }}

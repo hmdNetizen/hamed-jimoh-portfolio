@@ -667,8 +667,8 @@ const About = (props) => {
         <Grid item style={{ marginLeft: matchesXXXS && "-1em" }}>
           <Grid container justify={matchesMDOnly ? undefined : "center"}>
             {socials.map((social) => (
-              <Fade bottom>
-                <Grid item key={social.id}>
+              <Grid item key={social.id}>
+                <Fade bottom>
                   <Tooltip
                     title={social.title}
                     arrow
@@ -687,8 +687,8 @@ const About = (props) => {
                       </IconButton>
                     </a>
                   </Tooltip>
-                </Grid>
-              </Fade>
+                </Fade>
+              </Grid>
             ))}
           </Grid>
         </Grid>
