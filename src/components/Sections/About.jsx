@@ -27,8 +27,8 @@ import portfolio from "../../assets/portfolio.svg";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
+import LightSpeed from "react-reveal/LightSpeed";
 
 const useStyles = makeStyles((theme) => ({
   aboutContainer: {
@@ -190,30 +190,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const lists = [
-  { id: 1, pageCount: "01", label: "Home", icon: home, link: "#homepage" },
+  { id: 1, label: "Home", icon: home, link: "#homepage" },
   {
     id: 2,
-    pageCount: "02",
     label: "Services",
     icon: devices,
     link: "#services",
   },
   {
     id: 3,
-    pageCount: "03",
     label: "Portfolio",
     icon: portfolio,
     link: "#portfolio",
   },
   {
     id: 4,
-    pageCount: "04",
     label: "Resume",
     icon: file,
     link: "#resume",
   },
-  { id: 5, pageCount: "05", label: "Skills", icon: skills, link: "#skills" },
-  { id: 6, pageCount: "06", label: "Contact", icon: email, link: "#contact" },
+  { id: 5, label: "Skills", icon: skills, link: "#skills" },
+  { id: 6, label: "Contact", icon: email, link: "#contact" },
 ];
 
 const socials = [
@@ -265,7 +262,6 @@ const About = (props) => {
   const matchesXXS = useMediaQuery("(max-width:450px)"); //if screen width is equals or less than 450px
   const matchesXXSS = useMediaQuery("(max-width:400px)"); //if screen width is equals or less than 400px
   const matchesXXXS = useMediaQuery("(max-width:320px)"); //if screen width is equals or less than 320px
-  const matchesXXXSS = useMediaQuery("(max-width:290px)"); //if screen width is equals or less than 320px
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent); //For smooth swipe experience for iOS devices
 
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -296,13 +292,7 @@ const About = (props) => {
       className={classes.aboutContainer}
     >
       {/* Left section grid on medium and large screens but on the top for small and Xsmall screens */}
-      <Grid
-        item
-        className={`${classes.gridUrils} ${classes.leftGrid}`}
-        lg={3}
-        md={1}
-        sm={12}
-      >
+      <Grid item className={`${classes.leftGrid}`} lg={3} md={1} sm={12}>
         <Grid
           item
           style={{
@@ -600,12 +590,14 @@ const About = (props) => {
               marginBottom: matchesXXS ? "1em" : "2em",
             }}
           >
-            <Avatar
-              alt="Hamed's Photo"
-              src={passport}
-              size={20}
-              className={classes.avatar}
-            />
+            <Fade left>
+              <Avatar
+                alt="Hamed's Photo"
+                src={passport}
+                size={20}
+                className={classes.avatar}
+              />
+            </Fade>
           </Grid>
         </Hidden>
         <Grid
@@ -620,19 +612,21 @@ const About = (props) => {
               : "1em",
           }}
         >
-          <Typography
-            variant="body1"
-            paragraph
-            style={{
-              fontSize: matchesXS ? "1.2rem" : matchesMD ? "1.5rem" : "1.75",
-              color: theme.palette.primary.dark,
-            }}
-          >
-            Hello, my name is
-          </Typography>
+          <Fade top>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{
+                fontSize: matchesXS ? "1.2rem" : matchesMD ? "1.5rem" : "1.75",
+                color: theme.palette.primary.dark,
+              }}
+            >
+              Hello, my name is
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item style={{ marginTop: matchesXXS ? ".75em" : undefined }}>
-          <Zoom top>
+          <LightSpeed left>
             <Typography
               variant="h1"
               paragraph
@@ -648,7 +642,7 @@ const About = (props) => {
             >
               Hamed Jimoh
             </Typography>
-          </Zoom>
+          </LightSpeed>
         </Grid>
         <Grid
           item
@@ -673,7 +667,7 @@ const About = (props) => {
         <Grid item style={{ marginLeft: matchesXXXS && "-1em" }}>
           <Grid container justify={matchesMDOnly ? undefined : "center"}>
             {socials.map((social) => (
-              <Fade top>
+              <Fade bottom>
                 <Grid item key={social.id}>
                   <Tooltip
                     title={social.title}

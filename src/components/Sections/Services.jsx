@@ -73,10 +73,6 @@ const Services = ({ setPageCounter }) => {
   const matchesXXXS = useMediaQuery("(max-width:320px)"); //if screen width is equals or less than 320px
 
   useEffect(() => {
-    // const pageHeight = document.getElementById("servicesContainer")
-    //   .clientHeight;
-    // console.log("Services section height " + pageHeight);
-
     const servicesHeight = 2881;
 
     window.addEventListener(
@@ -102,7 +98,7 @@ const Services = ({ setPageCounter }) => {
       item
       container
       direction="column"
-      id="servicesContainer"
+      id="services"
       style={{
         paddingLeft: matchesSM ? 0 : matchesMD ? "8.33333%" : "25%",
       }}

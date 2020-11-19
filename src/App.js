@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const matchesXXS = useMediaQuery("(max-width:450px)");
+  const matchesXXXS = useMediaQuery("(max-width:380px)");
+  const matchesXXXXS = useMediaQuery("(max-width:340px)");
+
   const [selectedItem, setselectedItem] = useState(0);
   const [pageCounter, setPageCounter] = useState(1);
   return (
@@ -69,6 +72,9 @@ function App() {
           direction="column"
           justify="center"
           className={`${classes.resumeContainer} section-clip`}
+          style={{
+            marginTop: matchesXXXXS ? "-40%" : matchesXXXS ? "-30%" : undefined,
+          }}
         >
           <Resume />
           <Skills />

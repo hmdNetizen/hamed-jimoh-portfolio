@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -8,6 +8,10 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Alert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 import CircularProgress from "@material-ui/core/CircularProgress";
+
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
+import LightSpeed from "react-reveal/LightSpeed";
 
 import chatIcon from "../../assets/chat.svg";
 import SendIcon from "../SendIcon";
@@ -75,8 +79,6 @@ const useStyles = makeStyles((theme) => ({
 const Contact = () => {
   const classes = useStyles();
   const theme = useTheme();
-
-  const matchesXL = useMediaQuery(theme.breakpoints.down("xl"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXS = useMediaQuery("(max-width: 430px)");
@@ -124,166 +126,183 @@ const Contact = () => {
     setOpen(false);
   };
 
+  const buttonContent = (
+    <Fragment>
+      Submit
+      <SendIcon
+        disabled={
+          name.trim() === "" || emailHelper !== "" || message.length < 1
+        }
+      />
+    </Fragment>
+  );
+
   return (
     <Grid
       container
       direction="column"
+      id="contact"
       alignItems="center"
       className={`${classes.contactContainer}`}
       style={{ marginTop: matchesXXSS ? "-45%" : undefined }}
     >
       <Grid item>
-        <Typography
-          variant="h4"
-          align="center"
-          gutterBottom
-          style={{ fontSize: "1.75rem", marginBottom: ".75em" }}
-        >
-          Interested in working together?
-        </Typography>
+        <LightSpeed left>
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            style={{ fontSize: "1.75rem", marginBottom: ".75em" }}
+          >
+            Interested in working together?
+          </Typography>
+        </LightSpeed>
       </Grid>
       <Grid item container justify="center">
         <Grid item style={{ marginRight: ".5em" }}>
-          <Typography
-            variant="body1"
-            paragraph
-            style={{ color: theme.palette.common.dollar }}
-          >
-            Let's chat!
-          </Typography>
+          <Fade bottom>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: theme.palette.common.dollar }}
+            >
+              Let's chat!
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item>
-          <img
-            src={chatIcon}
-            alt="An icon indicating chat correspondence"
-            width={30}
-          />
+          <Fade bottom>
+            <img
+              src={chatIcon}
+              alt="An icon indicating chat correspondence"
+              width={30}
+            />
+          </Fade>
         </Grid>
       </Grid>
-      <form onSubmit={handleFormSubmit}>
-        <Grid
-          item
-          container
-          direction="column"
-          alignItems="center"
-          style={{
-            paddingTop: matchesXXS ? "1.5em" : "3em",
-            paddingBottom: matchesXXS ? "1.5em" : "5em",
-            paddingLeft: matchesXXS
-              ? "1em"
-              : matchesXS
-              ? "2em"
-              : matchesSM
-              ? "3em"
-              : "5em",
-            paddingRight: matchesXXS
-              ? "1em"
-              : matchesXS
-              ? "2em"
-              : matchesSM
-              ? "3em"
-              : "5em",
-            border: `.25px solid ${theme.palette.common.brown}`,
-            maxWidth: matchesSM ? "100%" : 650,
-            borderRadius: 5,
-          }}
-        >
-          <Grid item style={{ marginBottom: "1em" }}>
-            <TextField
-              id="name"
-              label="Name*"
-              name="name"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
-            />
-          </Grid>
-          <Grid item style={{ marginBottom: "1em" }}>
-            <TextField
-              id="email"
-              label="Email*"
-              name="email"
-              error={emailHelper !== ""}
-              helperText={emailHelper}
-              value={email}
-              onChange={validateEmail}
-              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
-            />
-          </Grid>
-          <Grid item style={{ marginBottom: "2em" }}>
-            <TextField
-              id="phone"
-              label="Phone"
-              name="phone"
-              value={phone}
-              onChange={(event) => setPhone(event.target.value)}
-              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
-            />
-          </Grid>
-          <Grid item style={{ marginBottom: "1em" }}>
-            <label
-              style={{
-                display: "block",
-                color: theme.palette.common.tan,
-                marginBottom: ".5em",
-              }}
-            >
-              Message*
-            </label>
-            <TextField
-              id="message"
-              name="message"
-              value={message}
-              InputProps={{ disableUnderline: true }}
-              onChange={(event) => setMessage(event.target.value)}
-              rows={10}
-              multiline
-              placeholder="Shoot me a message..."
-              className={classes.message}
-              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
-            />
-          </Grid>
+      <Slide left>
+        <form onSubmit={handleFormSubmit}>
           <Grid
             item
-            style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
+            container
+            direction="column"
+            alignItems="center"
+            style={{
+              paddingTop: matchesXXS ? "1.5em" : "3em",
+              paddingBottom: matchesXXS ? "1.5em" : "5em",
+              paddingLeft: matchesXXS
+                ? "1em"
+                : matchesXS
+                ? "2em"
+                : matchesSM
+                ? "3em"
+                : "5em",
+              paddingRight: matchesXXS
+                ? "1em"
+                : matchesXS
+                ? "2em"
+                : matchesSM
+                ? "3em"
+                : "5em",
+              border: `.25px solid ${theme.palette.common.brown}`,
+              maxWidth: matchesSM ? "100%" : 650,
+              borderRadius: 5,
+            }}
           >
-            <Button
-              type="submit"
-              disabled={
-                name.trim() === "" || emailHelper !== "" || message.length < 1
-              }
-              variant="contained"
-              className={classes.button}
+            <Grid item style={{ marginBottom: "1em" }}>
+              <TextField
+                id="name"
+                label="Name*"
+                name="name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
+              />
+            </Grid>
+            <Grid item style={{ marginBottom: "1em" }}>
+              <TextField
+                id="email"
+                label="Email*"
+                name="email"
+                error={emailHelper !== ""}
+                helperText={emailHelper}
+                value={email}
+                onChange={validateEmail}
+                style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
+              />
+            </Grid>
+            <Grid item style={{ marginBottom: "2em" }}>
+              <TextField
+                id="phone"
+                label="Phone"
+                name="phone"
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
+                style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
+              />
+            </Grid>
+            <Grid item style={{ marginBottom: "1em" }}>
+              <label
+                style={{
+                  display: "block",
+                  color: theme.palette.common.tan,
+                  marginBottom: ".5em",
+                }}
+              >
+                Message*
+              </label>
+              <TextField
+                id="message"
+                name="message"
+                value={message}
+                InputProps={{ disableUnderline: true }}
+                onChange={(event) => setMessage(event.target.value)}
+                rows={10}
+                multiline
+                placeholder="Shoot me a message..."
+                className={classes.message}
+                style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
+              />
+            </Grid>
+            <Grid
+              item
+              style={{ width: matchesXXSS ? 250 : matchesXXS ? 300 : 350 }}
             >
-              {loading ? <CircularProgress /> : "Submit"}
-              <SendIcon
+              <Button
+                type="submit"
                 disabled={
                   name.trim() === "" || emailHelper !== "" || message.length < 1
                 }
-              />
-            </Button>
+                variant="contained"
+                className={classes.button}
+              >
+                {loading ? <CircularProgress /> : buttonContent}
+              </Button>
+            </Grid>
           </Grid>
-        </Grid>
-      </form>
-      <Snackbar
-        open={open}
-        autoHideDuration={5000}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      >
-        <Alert
+        </form>
+      </Slide>
+      {!loading && (
+        <Snackbar
+          open={open}
+          autoHideDuration={5000}
           onClose={handleClose}
-          variant="standard"
-          classes={{
-            standardSuccess: classes.alert,
-            message: classes.alertMessage,
-            icon: classes.alertIcon,
-            action: classes.closeAlert,
-          }}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
         >
-          Message sent successfully.
-        </Alert>
-      </Snackbar>
+          <Alert
+            onClose={handleClose}
+            variant="standard"
+            classes={{
+              standardSuccess: classes.alert,
+              message: classes.alertMessage,
+              icon: classes.alertIcon,
+              action: classes.closeAlert,
+            }}
+          >
+            Message sent successfully.
+          </Alert>
+        </Snackbar>
+      )}
     </Grid>
   );
 };

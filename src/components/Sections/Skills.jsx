@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "../../components/progress.css";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -9,6 +9,7 @@ import ProgressBar from "react-customizable-progressbar";
 import getTechProgress from "./../TechProgress";
 import ProgressIcon from "../ProgressIcon";
 import HorizontalProgress from "./../HorizontalProgress";
+import "./../horizontalProgress.css";
 
 import LightSpeed from "react-reveal/LightSpeed";
 import Fade from "react-reveal/Fade";
@@ -51,20 +52,17 @@ const useStyles = makeStyles((theme) => ({
 const Skills = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesLG = useMediaQuery(theme.breakpoints.only("lg"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesSMX = useMediaQuery("(max-width:890px)");
-  //   const matchesMDX = useMediaQuery("(max-width:978px)");
-
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXS = useMediaQuery("(max-width:420px)");
-  const matchesXXXS = useMediaQuery("(max-width:380px)");
 
   return (
     <Grid
       item
       container
+      id="skills"
       direction="column"
       justify="center"
       style={{
@@ -129,7 +127,17 @@ const Skills = () => {
                   <div
                     className={classes.indicator}
                     style={{
-                      transform: matchesXXS ? "translateY(-57%)" : undefined,
+                      transform: matchesXXS
+                        ? "translateY(-57%)"
+                        : tech.title === "Responsive Design"
+                        ? "translateY(-45%)"
+                        : undefined,
+                      top:
+                        matchesXXS && tech.title === "Responsive Design"
+                          ? "43%"
+                          : tech.title === "Responsive Design"
+                          ? "36%"
+                          : undefined,
                     }}
                   >
                     <div>
@@ -170,22 +178,34 @@ const Skills = () => {
         </Grid>
         <Grid item container justify={matchesSMX ? "center" : "space-around"}>
           <Grid item style={{ marginBottom: "3em" }}>
-            <HorizontalProgress done={80} attribute="Creativity" />
+            <Fade bottom>
+              <HorizontalProgress done={80} attribute="Creativity" />
+            </Fade>
           </Grid>
           <Grid item style={{ marginBottom: "3em" }}>
-            <HorizontalProgress done={99} attribute="Integrity" />
+            <Fade bottom>
+              <HorizontalProgress done={99} attribute="Integrity" />
+            </Fade>
           </Grid>
           <Grid item style={{ marginBottom: "3em" }}>
-            <HorizontalProgress done={85} attribute="Collaboration" />
+            <Fade bottom>
+              <HorizontalProgress done={85} attribute="Collaboration" />
+            </Fade>
           </Grid>
           <Grid item style={{ marginBottom: "3em" }}>
-            <HorizontalProgress done={70} attribute="Problem-Solving" />
+            <Fade bottom>
+              <HorizontalProgress done={70} attribute="Problem-Solving" />
+            </Fade>
           </Grid>
           <Grid item style={{ marginBottom: "3em" }}>
-            <HorizontalProgress done={87} attribute="Empathy" />
+            <Fade bottom>
+              <HorizontalProgress done={95} attribute="Communication" />
+            </Fade>
           </Grid>
           <Grid item>
-            <HorizontalProgress done={82} attribute="Organisation" />
+            <Fade bottom>
+              <HorizontalProgress done={82} attribute="Organisation" />
+            </Fade>
           </Grid>
         </Grid>
       </Grid>

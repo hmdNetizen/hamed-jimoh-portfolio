@@ -111,14 +111,10 @@ const useStyles = makeStyles((theme) => ({
 const Resume = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  //   const matchesMDX = useMediaQuery("(max-width:978px)");
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesSMX = useMediaQuery("(max-width:890px)");
   const matchesSMXX = useMediaQuery("(max-width:768px)");
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-  const matchesXXS = useMediaQuery("(max-width:420px)");
   const matchesXXXS = useMediaQuery("(max-width:380px)");
   const matchesXXXXS = useMediaQuery("(max-width:340px)");
 
@@ -126,19 +122,15 @@ const Resume = () => {
     <Grid
       container
       direction="column"
+      id="resume"
       style={{
-        marginTop: matchesXXXXS ? "-40%" : matchesXXXS ? "-30%" : undefined,
+        marginTop: "20%",
+        paddingTop: !matchesMD ? "7em" : "5em",
+        paddingRight: "2em",
+        paddingLeft: "2em",
       }}
     >
-      <Grid
-        item
-        style={{
-          marginTop: "20%",
-          paddingTop: !matchesMD ? "7em" : "5em",
-          paddingRight: "2em",
-          paddingLeft: "2em",
-        }}
-      >
+      <Grid item>
         <Grid container>
           <Grid
             item

@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -188,6 +188,7 @@ const Portfolio = () => {
         container
         alignItems="center"
         justify="space-between"
+        id="portfolio"
         style={{
           paddingLeft: "2em",
           paddingRight: "2em",
@@ -355,7 +356,12 @@ const Portfolio = () => {
                 <CardContent className={classes.projectText}>
                   <Typography
                     variant="h4"
-                    style={{ fontWeight: 700, textAlign: "center" }}
+                    style={{
+                      fontWeight: 700,
+                      textAlign: "center",
+                      fontSize: "1.5rem",
+                      color: theme.palette.common.gold,
+                    }}
                   >
                     {project.name}
                   </Typography>
@@ -368,14 +374,6 @@ const Portfolio = () => {
     </Fragment>
   );
 
-  // Displays individual project selected
-
-  useEffect(() => {
-    // const pageHeight = document.getElementById("portfolio").clientHeight;
-    // console.log("Portfolio section height " + pageHeight);
-    // const portfolioHeight = 848;
-  });
-
   return (
     <Grid
       item
@@ -384,7 +382,6 @@ const Portfolio = () => {
       style={{
         paddingLeft: matchesSM ? 0 : matchesMD ? "8.33333%" : "25%",
       }}
-      id="portfolio"
     >
       {!isSelected ? (
         allProjects
