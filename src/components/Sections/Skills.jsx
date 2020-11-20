@@ -189,12 +189,12 @@ const Skills = () => {
           </Grid>
           <Grid item style={{ marginBottom: "3em" }}>
             <Fade bottom>
-              <HorizontalProgress done={85} attribute="Collaboration" />
+              <HorizontalProgress done={92} attribute="Collaboration" />
             </Fade>
           </Grid>
           <Grid item style={{ marginBottom: "3em" }}>
             <Fade bottom>
-              <HorizontalProgress done={70} attribute="Problem-Solving" />
+              <HorizontalProgress done={75} attribute="Problem-Solving" />
             </Fade>
           </Grid>
           <Grid item style={{ marginBottom: "3em" }}>

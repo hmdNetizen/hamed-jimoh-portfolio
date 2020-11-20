@@ -513,7 +513,10 @@ const About = (props) => {
               </Grid>
             </Hidden>
             {/* Rendering The navigation menu and icon dynamically */}
-            <List style={{ marginTop: !matchesSM ? "2em" : 0 }}>
+            <List
+              disablePadding
+              style={{ marginTop: !matchesSM ? "2em" : "-1.2em" }}
+            >
               {lists.map((list) => (
                 <ListItem
                   component="a"

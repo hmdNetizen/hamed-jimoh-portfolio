@@ -14,6 +14,8 @@ import Slide from "react-reveal/Slide";
 import LightSpeed from "react-reveal/LightSpeed";
 
 import chatIcon from "../../assets/chat.svg";
+import phoneIcon from "../../assets/phone.svg";
+import emailIcon from "../../assets/envelope.svg";
 import SendIcon from "../SendIcon";
 
 const useStyles = makeStyles((theme) => ({
@@ -131,7 +133,10 @@ const Contact = () => {
       Submit
       <SendIcon
         disabled={
-          name.trim() === "" || emailHelper !== "" || message.length < 1
+          name.trim() === "" ||
+          email.trim() === "" ||
+          emailHelper !== "" ||
+          message.length < 1
         }
       />
     </Fragment>
@@ -158,6 +163,50 @@ const Contact = () => {
           </Typography>
         </LightSpeed>
       </Grid>
+      <Grid item container style={{ marginBottom: "1em" }} justify="center">
+        <Grid item>
+          <img
+            src={phoneIcon}
+            alt="Phone icon"
+            style={{ marginRight: ".5em" }}
+          />
+        </Grid>
+        <Grid item>
+          <Typography
+            variant="body1"
+            style={{ color: theme.palette.common.dollar, fontSize: ".85rem" }}
+          >
+            <a
+              href="tel:+2347086937133"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              +234-708-693-7133
+            </a>
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid item container justify="center" style={{ marginBottom: "2em" }}>
+        <Grid item>
+          <img
+            src={emailIcon}
+            alt="Email Icon"
+            style={{ marginRight: ".5em" }}
+          />
+        </Grid>
+        <Grid item>
+          <Typography
+            variant="body1"
+            style={{ color: theme.palette.common.dollar, fontSize: ".85rem" }}
+          >
+            <a
+              href="mailto:hameed.jimoh1601@gmail.com"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              hameed.jimoh1601@gmail.com
+            </a>
+          </Typography>
+        </Grid>
+      </Grid>
       <Grid item container justify="center">
         <Grid item style={{ marginRight: ".5em" }}>
           <Fade bottom>
@@ -180,6 +229,7 @@ const Contact = () => {
           </Fade>
         </Grid>
       </Grid>
+
       <Slide left>
         <form
           onSubmit={handleFormSubmit}
@@ -276,7 +326,10 @@ const Contact = () => {
               <Button
                 type="submit"
                 disabled={
-                  name.trim() === "" || emailHelper !== "" || message.length < 1
+                  name.trim() === "" ||
+                  email.trim() === "" ||
+                  emailHelper !== "" ||
+                  message.length < 1
                 }
                 variant="contained"
                 className={classes.button}

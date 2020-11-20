@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     display: "block",
     margin: "0 auto .5em",
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
   },
   cardHeader: {
     fontSize: "1rem",
