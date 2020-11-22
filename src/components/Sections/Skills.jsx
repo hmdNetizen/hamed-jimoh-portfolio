@@ -158,6 +158,7 @@ const Skills = () => {
       <Grid
         item
         container
+        justify="center"
         style={{
           paddingTop: "1.5em",
           paddingLeft: matchesXS ? "2em" : "5em",
@@ -165,16 +166,17 @@ const Skills = () => {
           paddingBottom: matchesSMX ? "3em" : undefined,
         }}
       >
-        <Grid item>
-          {/* <LightSpeed> */}
-          <Typography
-            variant="h3"
-            gutterBottom
-            style={{ fontSize: "1.75rem", marginBottom: "1em" }}
-          >
-            Soft Skills
-          </Typography>
-          {/* </LightSpeed> */}
+        <Grid style={{ marginBottom: "2em" }}>
+          <LightSpeed>
+            <Typography
+              variant="h3"
+              align="center"
+              gutterBottom
+              style={{ fontSize: "1.75rem" }}
+            >
+              Soft Skills
+            </Typography>
+          </LightSpeed>
         </Grid>
         <Grid item container justify={matchesSMX ? "center" : "space-around"}>
           <Grid item style={{ marginBottom: "3em" }}>
