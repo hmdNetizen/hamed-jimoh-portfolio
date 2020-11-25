@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
@@ -266,22 +266,22 @@ const About = (props) => {
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  useEffect(() => {
-    const pageHeight = document.getElementById("homepage").clientHeight;
-    console.log("About Page Height " + pageHeight);
-    const aboutHeight = 781;
-    window.addEventListener(
-      "scroll",
-      (e) => {
-        if (window.pageYOffset > (aboutHeight / 2) * 1.2) {
-          setPageCounter(2);
-        } else if (window.pageYOffset < (aboutHeight / 2) * 1.2) {
-          setPageCounter(1);
-        }
-      },
-      false
-    );
-  }, [setPageCounter]);
+  // useEffect(() => {
+  //   const pageHeight = document.getElementById("homepage").clientHeight;
+  //   console.log("About Page Height " + pageHeight);
+  //   const aboutHeight = 781;
+  //   window.addEventListener(
+  //     "scroll",
+  //     (e) => {
+  //       if (window.pageYOffset > (aboutHeight / 2) * 1.2) {
+  //         setPageCounter(2);
+  //       } else if (window.pageYOffset < (aboutHeight / 2) * 1.2) {
+  //         setPageCounter(1);
+  //       }
+  //     },
+  //     false
+  //   );
+  // }, [setPageCounter]);
 
   return (
     <Grid

@@ -206,7 +206,7 @@ const Skills = () => {
           </Grid>
           <Grid item>
             <Fade bottom>
-              <HorizontalProgress done={82} attribute="Organisation" />
+              <HorizontalProgress done={82} attribute="Empathy" />
             </Fade>
           </Grid>
         </Grid>

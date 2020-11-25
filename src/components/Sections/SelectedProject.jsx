@@ -99,14 +99,14 @@ const SelectedProject = (props) => {
         direction="column"
         style={{
           padding: matchesXXS
-            ? "0 1em 5em 1em"
+            ? "3em 1em 5em 1em"
             : matchesXS
-            ? "0 2em 5em 2em"
+            ? "3em 2em 5em 2em"
             : matchesSM
-            ? "0 4em 5em 4em"
+            ? "3em 4em 5em 4em"
             : matchesMDX
-            ? "0 4em 5em 6em"
-            : "0 5em 5em 6em",
+            ? "3em 4em 5em 6em"
+            : "3em 5em 5em 6em",
           overflowX: "hidden",
         }}
       >
