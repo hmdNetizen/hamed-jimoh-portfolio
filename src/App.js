@@ -50,15 +50,8 @@ function App() {
   const [selectedItem, setselectedItem] = useState(0);
   const [pageCounter, setPageCounter] = useState(1);
 
-  //About - 650px
-  //servuces - 3151
-  //portfolio - 5427
-  //resume - 8192
-  //skills - 9835
   useEffect(() => {
     function changePageOnScroll() {
-      console.log(window.pageYOffset);
-      matchesXXS && console.log("yay!!!");
       const XSBreakpoints = [0, 488, 2672, 4999, 6697, 8147];
       const XXSBreakpoints = [0, 560, 2736, 5060, 7080, 8956];
       const XXXSBreakpoints = [0, 534, 2907, 5192, 7574, 9281];
