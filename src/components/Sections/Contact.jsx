@@ -25,18 +25,18 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "5em",
 
     [theme.breakpoints.down("lg")]: {
-      paddingTop: "12em",
+      paddingTop: "15em",
     },
 
-    marginTop: "-10%",
+    marginTop: "-15%",
     background: theme.palette.common.darkBrown,
 
     [theme.breakpoints.down("md")]: {
       paddingLeft: "8.33333%",
-      marginTop: "-15%",
+      marginTop: "-17%",
     },
     [theme.breakpoints.down("sm")]: {
-      marginTop: "-17%",
+      marginTop: "-18%",
       paddingLeft: 0,
     },
     [theme.breakpoints.down("xs")]: {
@@ -149,7 +149,7 @@ const Contact = () => {
       id="contact"
       alignItems="center"
       className={`${classes.contactContainer}`}
-      style={{ marginTop: matchesXXSS ? "-45%" : undefined }}
+      style={{ marginTop: matchesXXSS ? "-50%" : undefined }}
     >
       <Grid item>
         <LightSpeed left>

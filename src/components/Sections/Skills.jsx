@@ -67,6 +67,7 @@ const Skills = () => {
       justify="center"
       style={{
         paddingTop: "5em",
+        paddingBottom: matchesSMX ? "3em" : "5em",
       }}
     >
       <Grid item>
@@ -107,7 +108,7 @@ const Skills = () => {
               item
               key={tech.id}
               style={{
-                marginBottom: "3em",
+                marginBottom: !matchesSM ? "3em" : 0,
               }}
               md
             >
@@ -163,10 +164,9 @@ const Skills = () => {
           paddingTop: "1.5em",
           paddingLeft: matchesXS ? "2em" : "5em",
           paddingRight: matchesXS ? "2em" : "5em",
-          paddingBottom: matchesSMX ? "3em" : undefined,
         }}
       >
-        <Grid style={{ marginBottom: "2em" }}>
+        <Grid>
           <LightSpeed>
             <Typography
               variant="h3"
@@ -206,7 +206,7 @@ const Skills = () => {
           </Grid>
           <Grid item>
             <Fade bottom>
-              <HorizontalProgress done={82} attribute="Empathy" />
+              <HorizontalProgress done={96} attribute="Empathy" />
             </Fade>
           </Grid>
         </Grid>

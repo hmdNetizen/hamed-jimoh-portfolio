@@ -97,6 +97,7 @@ const SelectedProject = (props) => {
       <Grid
         container
         direction="column"
+        id="portfolio"
         style={{
           padding: matchesXXS
             ? "3em 1em 5em 1em"
