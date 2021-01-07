@@ -13,6 +13,9 @@ import easyBank3 from "../assets/EasybankLandingPage3.jpg";
 import manage from "../assets/manageLandingPage.png";
 import manage2 from "../assets/manage2.png";
 import manage3 from "../assets/manage3.png";
+import mooville1 from "../assets/mooville1.png";
+import mooville2 from "../assets/mooville2.png";
+import mooville3 from "../assets/mooville3.png";
 import htmlIcon from "../assets/html5.svg";
 import cssIcon from "../assets/css3.svg";
 import jsIcon from "../assets/javascript.svg";
@@ -27,16 +30,16 @@ const projectList = [
   {
     id: 0,
     name: "Mooville",
-    img: urlshortenerImg1,
+    img: mooville1,
     alt: "Logo",
     date: new Date("2020-12-03"),
     selected: false,
     description:
       "This is a movie web application that enable users to see excerpts from a movie before streaming or downloading it.",
     images: [
-      { id: 0, link: urlshortenerImg1, alt: "Slide One" },
-      { id: 1, link: urlShortenerImg2, alt: "Slide Two" },
-      { id: 2, link: urlShortenerImg3, alt: "Slide Three" },
+      { id: 0, link: mooville1, alt: "Slide One" },
+      { id: 1, link: mooville2, alt: "Slide Two" },
+      { id: 2, link: mooville3, alt: "Slide Three" },
     ],
     liveURL: "https://mooville.vercel.app/",
     repo: "https://github.com/hmdNetizen/Mooville",
