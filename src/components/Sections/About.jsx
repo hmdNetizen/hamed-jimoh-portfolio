@@ -299,11 +299,12 @@ const About = (props) => {
           <Grid
             item
             container
-            alignItems={matchesSM ? "center" : undefined}
             direction={matchesSM ? "row" : "column"}
+            alignItems={matchesSM ? "center" : undefined}
+            justify={matchesSM ? "space-between" : undefined}
             style={{
               marginBottom: !matchesSM ? "2em" : 0,
-              marginLeft: matchesXXXS ? 0 : matchesSM ? "1em" : 0,
+              marginLeft: matchesXS ? 0 : matchesSM ? "1em" : 0,
             }}
           >
             <Grid item className={classes.menuGrid}>
@@ -326,7 +327,7 @@ const About = (props) => {
               style={{
                 display: matchesMDOnly ? "none" : undefined,
                 marginLeft: matchesSM && "auto",
-                marginRight: matchesXXXS ? "1.5em" : matchesSM ? "4em" : 0,
+                marginRight: matchesXS ? "1.5em" : matchesSM ? "4em" : 0,
               }}
             >
               <Grid

@@ -35,7 +35,7 @@ const projectList = [
     date: new Date("2020-12-03"),
     selected: false,
     description:
-      "This is a movie web application that enable users to see excerpts from a movie before streaming or downloading it.",
+      "This is a movie web application that allows users to see excerpts from a movie before streaming or downloading it.",
     images: [
       { id: 0, link: mooville1, alt: "Slide One" },
       { id: 1, link: mooville2, alt: "Slide Two" },
@@ -55,7 +55,7 @@ const projectList = [
       },
       {
         id: 3,
-        description: "Display short movie trailer",
+        description: "Display short movie trailer, rating and overview",
       },
       {
         id: 4,
