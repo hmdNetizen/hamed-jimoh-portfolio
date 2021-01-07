@@ -4,7 +4,6 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuOpen from "@material-ui/icons/MenuOpen";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Hidden from "@material-ui/core/Hidden";
@@ -245,13 +244,7 @@ const socials = [
 ];
 
 const About = (props) => {
-  const {
-    selectedItem,
-    setselectedItem,
-    pageCounter,
-    setPageCounter,
-    ...rest
-  } = props;
+  const { selectedItem, setselectedItem, ...rest } = props;
   const classes = useStyles();
   const theme = useTheme();
   const matchesMDOnly = useMediaQuery(theme.breakpoints.only("md"));
@@ -344,7 +337,7 @@ const About = (props) => {
                   marginTop: matchesSM ? 0 : "1.5em",
                 }}
               >
-                <Grid item>
+                {/* <Grid item>
                   <Typography
                     variant="body1"
                     style={{
@@ -369,6 +362,18 @@ const About = (props) => {
                     }}
                   >
                     {`0${lists.length}`}
+                  </Typography>
+                </Grid> */}
+                <Grid item>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    style={{
+                      fontFamily: "Pacifico, cursive",
+                      color: theme.palette.common.dollar,
+                    }}
+                  >
+                    &lt;Hamed J. /&gt;
                   </Typography>
                 </Grid>
               </Grid>
@@ -479,7 +484,7 @@ const About = (props) => {
               </IconButton>
             )}
             {/* Hide Page counter and line divider when the breakpoint is below 960px */}
-            <Hidden smDown>
+            {/* <Hidden smDown>
               <Grid
                 container
                 alignItems="center"
@@ -511,7 +516,7 @@ const About = (props) => {
                   </Typography>
                 </Grid>
               </Grid>
-            </Hidden>
+            </Hidden> */}
             {/* Rendering The navigation menu and icon dynamically */}
             <List
               disablePadding
@@ -533,7 +538,6 @@ const About = (props) => {
                   onClick={() => {
                     setselectedItem(list.id);
                     setOpenDrawer(false);
-                    setPageCounter(list.id);
                   }}
                 >
                   <ListItemIcon classes={{ root: classes.listIcon }}>

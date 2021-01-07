@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 // import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
@@ -6,7 +6,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Theme from "./components/Theme";
 import About from "./components/Sections/About";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Services from "./components/Sections/Services";
 import Portfolio from "./components/Sections/Portfolio";
 import Resume from "./components/Sections/Resume";
@@ -41,14 +41,13 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  const theme = useTheme();
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  // const theme = useTheme();
+  // const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXS = useMediaQuery("(max-width:450px)");
   const matchesXXXS = useMediaQuery("(max-width:380px)");
   const matchesXXXXS = useMediaQuery("(max-width:340px)");
 
   const [selectedItem, setselectedItem] = useState(0);
-  const [pageCounter, setPageCounter] = useState(1);
 
   // useEffect(() => {
   //   function changePageOnScroll() {
@@ -95,19 +94,14 @@ function App() {
     <ThemeProvider theme={Theme}>
       <CssBaseline />
       <Grid container direction="column" style={{ overflowX: "hidden" }}>
-        <About
-          selectedItem={selectedItem}
-          setselectedItem={setselectedItem}
-          pageCounter={pageCounter}
-          setPageCounter={setPageCounter}
-        />
+        <About selectedItem={selectedItem} setselectedItem={setselectedItem} />
         <Grid
           container
           direction="column"
           className={`${classes.sectionContainer} section-clip`}
           style={{ paddingBottom: matchesXXS ? "6em" : undefined }}
         >
-          <Services setPageCounter={setPageCounter} />
+          <Services />
           <Portfolio />
         </Grid>
         <Grid

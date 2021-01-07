@@ -15,7 +15,7 @@ import SelectedProject from "./SelectedProject";
 
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 
-import Zoom from "react-reveal/Zoom";
+import Slide from "react-reveal/Slide";
 
 const useStyles = makeStyles((theme) => ({
   filterIcon: {
@@ -347,7 +347,7 @@ const Portfolio = () => {
               setIsSelected(true);
             }}
           >
-            <Zoom top>
+            <Slide left>
               <Card className={classes.card}>
                 <img
                   src={project.img}
@@ -368,7 +368,7 @@ const Portfolio = () => {
                   </Typography>
                 </CardContent>
               </Card>
-            </Zoom>
+            </Slide>
           </Grid>
         ))}
       </Grid>
