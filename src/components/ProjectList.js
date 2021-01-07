@@ -13,58 +13,65 @@ import easyBank3 from "../assets/EasybankLandingPage3.jpg";
 import manage from "../assets/manageLandingPage.png";
 import manage2 from "../assets/manage2.png";
 import manage3 from "../assets/manage3.png";
-import quizImg from "../assets/quizApp.png";
-import quizImg2 from "../assets/quiz2.png";
-import quizImg3 from "../assets/quiz3.png";
 import htmlIcon from "../assets/html5.svg";
 import cssIcon from "../assets/css3.svg";
 import jsIcon from "../assets/javascript.svg";
 import reactIcon from "../assets/react.svg";
+import sassIcon from "../assets/sass.svg";
 import materialUI from "../assets/material-ui.svg";
 import rebrandly from "../assets/rebrandly.png";
+import tmdb from "../assets/TMDB.svg";
 import edamam from "../assets/edamam.png";
 
 const projectList = [
   {
     id: 0,
-    name: "Chefs Mentor",
-    img: recipeSearchApp,
-    alt: "Chefs Mentor",
-    date: new Date("2020-05-09"),
+    name: "Mooville",
+    img: urlshortenerImg1,
+    alt: "Logo",
+    date: new Date("2020-12-03"),
     selected: false,
     description:
-      "This project was developed in the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
+      "This is a movie web application that enable users to see excerpts from a movie before streaming or downloading it.",
     images: [
-      { id: 0, link: recipeSearchApp, alt: "Slide One" },
-      { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
-      { id: 2, link: recipeSearchApp3, alt: "Slide Three" },
+      { id: 0, link: urlshortenerImg1, alt: "Slide One" },
+      { id: 1, link: urlShortenerImg2, alt: "Slide Two" },
+      { id: 2, link: urlShortenerImg3, alt: "Slide Three" },
     ],
-    liveURL: "https://hmdnetizen.github.io/search-recipes/",
-    repo: "https://github.com/hmdNetizen/search-recipes",
+    liveURL: "https://mooville.vercel.app/",
+    repo: "https://github.com/hmdNetizen/Mooville",
     functionalities: [
       {
         id: 0,
-        description:
-          "View the optimal layout for the site depending on their device's screen size",
+        description: "Display different movie genres",
       },
-      { id: 1, description: "Shorten any valid URL" },
+      { id: 1, description: "Search for different movies" },
       {
         id: 2,
-        description:
-          "See a list of their shortened links, even after refreshing the browser",
+        description: "Bookmark, like and dislike movies",
       },
       {
         id: 3,
+        description: "Display short movie trailer",
+      },
+      {
+        id: 4,
+        description: "Alternate between dark mode or light mode",
+      },
+      {
+        id: 5,
         description:
-          "Copy the shortened link to their clipboard in a single click",
+          "Receive an error message when the 'form' is submitted if:",
+        options: ["The 'input' field is empty"],
       },
     ],
     techs: [
       { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
       { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-      { id: 4, logo: edamam, alt: "Edamam Logo", title: "Edamam API" },
+      { id: 2, logo: sassIcon, alt: "Sass Logo", title: "Sass" },
+      { id: 3, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 4, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      { id: 5, logo: tmdb, alt: "The movie database Logo", title: "TMDB API" },
     ],
   },
   {
@@ -125,8 +132,51 @@ const projectList = [
       { id: 5, logo: rebrandly, alt: "Rebrandly Logo", title: "Rebrandly API" },
     ],
   },
+
   {
     id: 2,
+    name: "Chefs Mentor",
+    img: recipeSearchApp,
+    alt: "Chefs Mentor",
+    date: new Date("2020-05-09"),
+    selected: false,
+    description:
+      "This project was developed in the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
+    images: [
+      { id: 0, link: recipeSearchApp, alt: "Slide One" },
+      { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
+      { id: 2, link: recipeSearchApp3, alt: "Slide Three" },
+    ],
+    liveURL: "https://hmdnetizen.github.io/search-recipes/",
+    repo: "https://github.com/hmdNetizen/search-recipes",
+    functionalities: [
+      {
+        id: 0,
+        description:
+          "View the optimal layout for the site depending on their device's screen size",
+      },
+      { id: 1, description: "Shorten any valid URL" },
+      {
+        id: 2,
+        description:
+          "See a list of their shortened links, even after refreshing the browser",
+      },
+      {
+        id: 3,
+        description:
+          "Copy the shortened link to their clipboard in a single click",
+      },
+    ],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      { id: 4, logo: edamam, alt: "Edamam Logo", title: "Edamam API" },
+    ],
+  },
+  {
+    id: 3,
     name: "Booklist Tracker with Dark Mode",
     img: booklist,
     alt: "Book List",
@@ -161,7 +211,7 @@ const projectList = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "EasyBank Landing Page",
     img: easyBank,
     alt: "Easy Bank",
@@ -201,7 +251,7 @@ const projectList = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "Manage Landing Page",
     img: manage,
     alt: "Manage Landing Page",
@@ -255,28 +305,28 @@ const projectList = [
       },
     ],
   },
-  {
-    id: 5,
-    name: "Javascript Quiz",
-    img: quizImg,
-    alt: "Quiz App",
-    date: new Date("2020-01-04"),
-    selected: false,
-    description: "This is the Javascript Quiz Project",
-    images: [
-      { id: 0, link: quizImg2, alt: "Slide One" },
-      { id: 1, link: quizImg, alt: "Slide Two" },
-      { id: 1, link: quizImg3, alt: "Slide Three" },
-    ],
-    repo: "https://github.com/hmdNetizen/Quiz-Application",
-    functionalities: [],
-    techs: [
-      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
-      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-    ],
-  },
+  // {
+  //   id: 5,
+  //   name: "Javascript Quiz",
+  //   img: quizImg,
+  //   alt: "Quiz App",
+  //   date: new Date("2020-01-04"),
+  //   selected: false,
+  //   description: "This is the Javascript Quiz Project",
+  //   images: [
+  //     { id: 0, link: quizImg2, alt: "Slide One" },
+  //     { id: 1, link: quizImg, alt: "Slide Two" },
+  //     { id: 1, link: quizImg3, alt: "Slide Three" },
+  //   ],
+  //   repo: "https://github.com/hmdNetizen/Quiz-Application",
+  //   functionalities: [],
+  //   techs: [
+  //     { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+  //     { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+  //     { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+  //     { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+  //   ],
+  // },
 ];
 
 const getProjects = () => {

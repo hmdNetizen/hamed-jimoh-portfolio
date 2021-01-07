@@ -203,8 +203,18 @@ const SelectedProject = (props) => {
                                   ? 115
                                   : tech.alt === "Edamam Logo"
                                   ? 85
+                                  : tech.title === "TMDB API"
+                                  ? 60
                                   : 25
                               }
+                              style={{
+                                width:
+                                  tech.title === "TMDB API"
+                                    ? 60
+                                    : matchesSM && tech.title === "TMDB API"
+                                    ? 80
+                                    : undefined,
+                              }}
                             />
                           </Tooltip>
                         </Grid>

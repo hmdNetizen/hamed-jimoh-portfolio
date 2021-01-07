@@ -166,7 +166,7 @@ const Skills = () => {
           paddingRight: matchesXS ? "2em" : "5em",
         }}
       >
-        <Grid>
+        <Grid style={{ marginBottom: "2em" }}>
           <LightSpeed>
             <Typography
               variant="h3"
