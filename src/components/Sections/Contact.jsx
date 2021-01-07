@@ -1,22 +1,16 @@
-import React, { useState, Fragment } from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Alert from "@material-ui/lab/Alert";
-import Snackbar from "@material-ui/core/Snackbar";
-import CircularProgress from "@material-ui/core/CircularProgress";
 
 import Fade from "react-reveal/Fade";
-import Slide from "react-reveal/Slide";
 import LightSpeed from "react-reveal/LightSpeed";
 
 import chatIcon from "../../assets/chat.svg";
 import phoneIcon from "../../assets/phone.svg";
 import emailIcon from "../../assets/envelope.svg";
-import SendIcon from "../SendIcon";
+// import SendIcon from "../SendIcon";
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
@@ -81,66 +75,63 @@ const useStyles = makeStyles((theme) => ({
 const Contact = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-  const matchesXXS = useMediaQuery("(max-width: 430px)");
   const matchesXXSS = useMediaQuery("(max-width: 350px)");
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [emailHelper, setEmailHelper] = useState("");
-  const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [message, setMessage] = useState("");
+  // const [emailHelper, setEmailHelper] = useState("");
+  // const [open, setOpen] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const validateEmail = (event) => {
-    let valid;
-    setEmail(event.target.value);
-    valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
-      event.target.value
-    );
-    if (!valid) {
-      setEmailHelper("Invalid email");
-    } else {
-      setEmailHelper("");
-    }
-  };
+  // const validateEmail = (event) => {
+  //   let valid;
+  //   setEmail(event.target.value);
+  //   valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+  //     event.target.value
+  //   );
+  //   if (!valid) {
+  //     setEmailHelper("Invalid email");
+  //   } else {
+  //     setEmailHelper("");
+  //   }
+  // };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
+  // const handleFormSubmit = (event) => {
+  //   event.preventDefault();
 
-    if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
-      setLoading(true);
-      setOpen(true);
-    }
-    setName("");
-    setEmail("");
-    setPhone("");
-    setMessage("");
-    setLoading(false);
-  };
+  //   if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
+  //     setLoading(true);
+  //     setOpen(true);
+  //   }
+  //   setName("");
+  //   setEmail("");
+  //   setPhone("");
+  //   setMessage("");
+  //   setLoading(false);
+  // };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpen(false);
-  };
+  // const handleClose = (event, reason) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+  //   setOpen(false);
+  // };
 
-  const buttonContent = (
-    <Fragment>
-      Submit
-      <SendIcon
-        disabled={
-          name.trim() === "" ||
-          email.trim() === "" ||
-          emailHelper !== "" ||
-          message.length < 1
-        }
-      />
-    </Fragment>
-  );
+  // const buttonContent = (
+  //   <Fragment>
+  //     Submit
+  //     <SendIcon
+  //       disabled={
+  //         name.trim() === "" ||
+  //         email.trim() === "" ||
+  //         emailHelper !== "" ||
+  //         message.length < 1
+  //       }
+  //     />
+  //   </Fragment>
+  // );
 
   return (
     <Grid
@@ -162,6 +153,28 @@ const Contact = () => {
             Interested in working together?
           </Typography>
         </LightSpeed>
+      </Grid>
+      <Grid item container justify="center">
+        <Grid item style={{ marginRight: ".5em" }}>
+          <Fade bottom>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: theme.palette.common.dollar }}
+            >
+              Let's chat!
+            </Typography>
+          </Fade>
+        </Grid>
+        <Grid item>
+          <Fade bottom>
+            <img
+              src={chatIcon}
+              alt="An icon indicating chat correspondence"
+              width={30}
+            />
+          </Fade>
+        </Grid>
       </Grid>
       <Grid item container style={{ marginBottom: "1em" }} justify="center">
         <Grid item>
@@ -207,30 +220,8 @@ const Contact = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Grid item container justify="center">
-        <Grid item style={{ marginRight: ".5em" }}>
-          <Fade bottom>
-            <Typography
-              variant="body1"
-              paragraph
-              style={{ color: theme.palette.common.dollar }}
-            >
-              Let's chat!
-            </Typography>
-          </Fade>
-        </Grid>
-        <Grid item>
-          <Fade bottom>
-            <img
-              src={chatIcon}
-              alt="An icon indicating chat correspondence"
-              width={30}
-            />
-          </Fade>
-        </Grid>
-      </Grid>
 
-      <Slide left>
+      {/* <Slide left>
         <form
           onSubmit={handleFormSubmit}
           style={{
@@ -339,8 +330,8 @@ const Contact = () => {
             </Grid>
           </Grid>
         </form>
-      </Slide>
-      {!loading && (
+      </Slide> */}
+      {/* {!loading && (
         <Snackbar
           open={open}
           autoHideDuration={5000}
@@ -360,7 +351,7 @@ const Contact = () => {
             Message sent successfully.
           </Alert>
         </Snackbar>
-      )}
+      )} */}
     </Grid>
   );
 };
