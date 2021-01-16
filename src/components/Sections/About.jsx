@@ -15,7 +15,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import HighlightOff from "@material-ui/icons/HighlightOff";
 
-import portrait from "../../assets/photo.jpg";
+import portrait from "../../assets/Hamed.png";
 import passport from "../../assets//passport.png";
 import home from "../../assets/home.svg";
 import email from "../../assets/email.svg";
@@ -566,7 +566,7 @@ const About = (props) => {
         direction="column"
         justify={matchesSM ? undefined : "center"}
         alignItems={matchesSM ? "center" : undefined}
-        lg={4}
+        lg={5}
         md={5}
         className={`${classes.gridUtils} ${classes.middleGrid}`}
         style={{
@@ -704,7 +704,7 @@ const About = (props) => {
       <Hidden smDown>
         <Grid
           item
-          lg={5}
+          lg={4}
           md={6}
           className={`${classes.gridUtils} ${classes.rightGrid}`}
         >

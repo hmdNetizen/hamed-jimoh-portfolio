@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useRef } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -133,6 +133,8 @@ const Portfolio = () => {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXXS = useMediaQuery("(max-width:450px)");
 
+  const myRef = useRef(null);
+
   const [projects, setProjects] = useState(getProjects);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedMenu, setSelectedMenu] = useState(1);
@@ -179,6 +181,10 @@ const Portfolio = () => {
     const filteredProject = newProjects.filter((project) => project.selected);
 
     setSelectedProject(filteredProject);
+
+    if (selectedProject.length > 0) {
+      window.scrollTo(0, myRef.current.offsetTop);
+    }
   };
 
   const allProjects = (
@@ -391,6 +397,7 @@ const Portfolio = () => {
           setIsSelected={setIsSelected}
           selectedProject={selectedProject}
           setSelectedProject={setSelectedProject}
+          targetRef={myRef}
         />
       )}
     </Grid>

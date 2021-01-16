@@ -71,7 +71,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const SelectedProject = (props) => {
-  const { setIsSelected, setSelectedProject, selectedProject, ...rest } = props;
+  const {
+    setIsSelected,
+    setSelectedProject,
+    selectedProject,
+    targetRef,
+    ...rest
+  } = props;
 
   const settings = {
     dots: true,
@@ -132,6 +138,7 @@ const SelectedProject = (props) => {
             spacing={6}
             alignItems={matchesSM ? "center" : undefined}
             justify={matchesSM ? "center" : undefined}
+            ref={targetRef}
           >
             <Hidden mdUp>
               <Grid item>
