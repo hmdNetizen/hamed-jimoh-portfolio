@@ -158,16 +158,23 @@ const projectList = [
         description:
           "View the optimal layout for the site depending on their device's screen size",
       },
-      { id: 1, description: "Shorten any valid URL" },
+      {
+        id: 1,
+        description:
+          "Fetch recipe(s) and its variants based on the searched term",
+      },
       {
         id: 2,
-        description:
-          "See a list of their shortened links, even after refreshing the browser",
+        description: "View more details about the individual recipe fetched",
       },
       {
         id: 3,
         description:
-          "Copy the shortened link to their clipboard in a single click",
+          "Receive an error message when the 'form' is submitted if:",
+        options: [
+          "The 'input' field is empty",
+          "Recipe searched could not be found",
+        ],
       },
     ],
     techs: [
