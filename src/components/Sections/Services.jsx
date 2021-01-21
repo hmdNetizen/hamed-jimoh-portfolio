@@ -11,6 +11,7 @@ import seoIcon from "../../assets/seoIcon.svg";
 import websiteIcon from "../../assets/websiteIcon.svg";
 import featuresIcon from "../../assets/featuresIcon.svg";
 import cartIcon from "../../assets/cartIcon.svg";
+import resume from "../../assets/Hamed Jimoh.pdf";
 
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
@@ -199,6 +200,8 @@ const Services = ({ setPageCounter }) => {
             <Slide left>
               <Button
                 variant="outlined"
+                href={resume}
+                download
                 className={classes.button}
                 style={{ padding: matchesXXXS && ".25em 1em" }}
               >
