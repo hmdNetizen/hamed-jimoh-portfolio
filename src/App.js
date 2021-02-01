@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-// import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Theme from "./components/Theme";
@@ -41,15 +40,12 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  // const theme = useTheme();
-  // const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXS = useMediaQuery("(max-width:450px)");
   const matchesXXXS = useMediaQuery("(max-width:380px)");
   const matchesXXXXS = useMediaQuery("(max-width:340px)");
 
   const [selectedItem, setselectedItem] = useState(0);
 
-  
   return (
     <ThemeProvider theme={Theme}>
       <CssBaseline />
