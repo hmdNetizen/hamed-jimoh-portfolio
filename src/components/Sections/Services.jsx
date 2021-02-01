@@ -73,27 +73,6 @@ const Services = ({ setPageCounter }) => {
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesXXXS = useMediaQuery("(max-width:320px)"); //if screen width is equals or less than 320px
 
-  // useEffect(() => {
-  //   const servicesHeight = 2881;
-
-  //   window.addEventListener(
-  //     "scroll",
-  //     (e) => {
-  //       if (window.pageYOffset > (servicesHeight / 2) * 1.2) {
-  //         setPageCounter(3);
-  //       } else if (
-  //         window.pageYOffset < (servicesHeight / 2) * 1.2 &&
-  //         window.pageYOffset > 781 / 2
-  //       ) {
-  //         setPageCounter(2);
-  //       } else {
-  //         setPageCounter(1);
-  //       }
-  //     },
-  //     false
-  //   );
-  // }, [setPageCounter]);
-
   return (
     <Grid
       item

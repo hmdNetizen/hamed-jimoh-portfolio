@@ -49,47 +49,7 @@ function App() {
 
   const [selectedItem, setselectedItem] = useState(0);
 
-  // useEffect(() => {
-  //   function changePageOnScroll() {
-  //     const XSBreakpoints = [0, 488, 2672, 4999, 6697, 8147];
-  //     const XXSBreakpoints = [0, 560, 2736, 5060, 7080, 8956];
-  //     const XXXSBreakpoints = [0, 534, 2907, 5192, 7574, 9281];
-  //     const XXXXSBreakpoints = [0, 593, 3040, 5307, 8038, 9624];
-
-  //     // If the screen matches 450px breakpoints
-  //     matchesXS &&
-  //       XSBreakpoints.forEach((bp, index) => {
-  //         window.pageYOffset >= bp && setPageCounter(index + 1);
-  //       });
-
-  //     // If the screen matches 450px breakpoints
-  //     matchesXXS &&
-  //       XXSBreakpoints.forEach((bp, index) => {
-  //         window.pageYOffset >= bp && setPageCounter(index + 1);
-  //       });
-
-  //     //If the screen matches 380px breakpoints
-  //     matchesXXXS &&
-  //       XXXSBreakpoints.forEach((bp, index) => {
-  //         window.pageYOffset >= bp && setPageCounter(index + 1);
-  //       });
-  //     //If the screen matches 340px breakpoints
-  //     matchesXXXXS &&
-  //       XXXXSBreakpoints.forEach((bp, index) => {
-  //         window.pageYOffset >= bp && setPageCounter(index + 1);
-  //       });
-  //   }
-  //   window.addEventListener("scroll", changePageOnScroll, false);
-  //   return () =>
-  //     window.removeEventListener("scroll", changePageOnScroll, false);
-  // }, [
-  //   pageCounter,
-  //   setPageCounter,
-  //   matchesXS,
-  //   matchesXXS,
-  //   matchesXXXS,
-  //   matchesXXXXS,
-  // ]);
+  
   return (
     <ThemeProvider theme={Theme}>
       <CssBaseline />
