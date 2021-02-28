@@ -77,7 +77,7 @@ const Footer = (props) => {
           }}
         >
           <Typography variant="body1" paragraph style={{ fontSize: ".85rem" }}>
-            &copy; 2020 Hamed Jimoh.
+            &copy; 2021 Hamed Jimoh.
           </Typography>
         </Grid>
         <Grid item>
