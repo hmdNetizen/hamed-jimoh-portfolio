@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -44,13 +44,11 @@ function App() {
   const matchesXXXS = useMediaQuery("(max-width:380px)");
   const matchesXXXXS = useMediaQuery("(max-width:340px)");
 
-  const [selectedItem, setselectedItem] = useState(0);
-
   return (
     <ThemeProvider theme={Theme}>
       <CssBaseline />
       <Grid container direction="column" style={{ overflowX: "hidden" }}>
-        <About selectedItem={selectedItem} setselectedItem={setselectedItem} />
+        <About />
         <Grid
           container
           direction="column"

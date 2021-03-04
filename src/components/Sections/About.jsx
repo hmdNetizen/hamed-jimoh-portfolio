@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
@@ -243,8 +243,8 @@ const socials = [
   },
 ];
 
-const About = (props) => {
-  const { selectedItem, setselectedItem, ...rest } = props;
+const About = ({ ...rest }) => {
+  // const { selectedItem, setSelectedItem, ...rest } = props;
   const classes = useStyles();
   const theme = useTheme();
   const matchesMDOnly = useMediaQuery(theme.breakpoints.only("md"));
@@ -258,23 +258,21 @@ const About = (props) => {
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent); //For smooth swipe experience for iOS devices
 
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(0);
 
-  // useEffect(() => {
-  //   const pageHeight = document.getElementById("homepage").clientHeight;
-  //   console.log("About Page Height " + pageHeight);
-  //   const aboutHeight = 781;
-  //   window.addEventListener(
-  //     "scroll",
-  //     (e) => {
-  //       if (window.pageYOffset > (aboutHeight / 2) * 1.2) {
-  //         setPageCounter(2);
-  //       } else if (window.pageYOffset < (aboutHeight / 2) * 1.2) {
-  //         setPageCounter(1);
-  //       }
-  //     },
-  //     false
-  //   );
-  // }, [setPageCounter]);
+  useEffect(() => {
+    [...lists].forEach((list) => {
+      switch (window.location.pathname) {
+        case `${list.link}`:
+          if (selectedItem !== list.id) {
+            setSelectedItem(list.id);
+          }
+          break;
+        default:
+          break;
+      }
+    });
+  });
 
   return (
     <Grid
@@ -484,41 +482,6 @@ const About = (props) => {
                 <HighlightOff className={classes.close} />
               </IconButton>
             )}
-            {/* Hide Page counter and line divider when the breakpoint is below 960px */}
-            {/* <Hidden smDown>
-              <Grid
-                container
-                alignItems="center"
-                justify="center"
-                style={{
-                  marginTop: matchesSM ? 0 : "1.5em",
-                }}
-              >
-                <Grid item>
-                  <Typography
-                    variant="body1"
-                    style={{
-                      fontWeight: 700,
-                      color: theme.palette.common.tan,
-                    }}
-                  >
-                    {`0${pageCounter}`}
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Divider className={classes.divider} />
-                </Grid>
-                <Grid item>
-                  <Typography
-                    variant="body1"
-                    style={{ fontWeight: 700, color: "#fff" }}
-                  >
-                    {`0${lists.length}`}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Hidden> */}
-            {/* Rendering The navigation menu and icon dynamically */}
             <List
               disablePadding
               style={{ marginTop: !matchesSM ? "2em" : "-1.2em" }}
@@ -537,7 +500,7 @@ const About = (props) => {
                   }}
                   selected={selectedItem === list.id}
                   onClick={() => {
-                    setselectedItem(list.id);
+                    setSelectedItem(list.id);
                     setOpenDrawer(false);
                   }}
                 >
