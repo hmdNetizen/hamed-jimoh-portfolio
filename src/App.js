@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Theme from "./components/Theme";
+import Theme from "./components/theme/Theme";
 import About from "./components/Sections/About";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";

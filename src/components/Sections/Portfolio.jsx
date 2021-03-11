@@ -10,7 +10,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Tooltip from "@material-ui/core/Tooltip";
-import { projectLists } from "../ProjectList";
+import { projectLists } from "../dataset/ProjectList";
 import SelectedProject from "./SelectedProject";
 
 import { useTheme, makeStyles } from "@material-ui/core/styles";

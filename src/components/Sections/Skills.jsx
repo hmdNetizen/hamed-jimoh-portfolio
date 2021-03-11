@@ -1,5 +1,5 @@
 import React from "react";
-import "../../components/progress.css";
+import "../utils/progress.css";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -7,9 +7,9 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ProgressBar from "react-customizable-progressbar";
 
 import { techProgressLists } from "../dataset/techProgress";
-import ProgressIcon from "../ProgressIcon";
-import HorizontalProgress from "./../HorizontalProgress";
-import "./../horizontalProgress.css";
+import ProgressIcon from "../utils/ProgressIcon";
+import HorizontalProgress from "../utils/HorizontalProgress";
+import "../utils/horizontalProgress.css";
 
 import LightSpeed from "react-reveal/LightSpeed";
 import Fade from "react-reveal/Fade";
