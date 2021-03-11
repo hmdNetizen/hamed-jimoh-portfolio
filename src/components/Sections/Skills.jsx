@@ -6,7 +6,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ProgressBar from "react-customizable-progressbar";
 
-import getTechProgress from "./../TechProgress";
+import { techProgressLists } from "../dataset/techProgress";
 import ProgressIcon from "../ProgressIcon";
 import HorizontalProgress from "./../HorizontalProgress";
 import "./../horizontalProgress.css";
@@ -103,7 +103,7 @@ const Skills = () => {
         }}
       >
         <Grid container justify="space-around" spacing={6}>
-          {getTechProgress().map((tech) => (
+          {techProgressLists.map((tech) => (
             <Grid
               item
               key={tech.id}

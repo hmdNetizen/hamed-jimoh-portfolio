@@ -10,7 +10,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Tooltip from "@material-ui/core/Tooltip";
-import getProjects from "../ProjectList";
+import { projectLists } from "../ProjectList";
 import SelectedProject from "./SelectedProject";
 
 import { useTheme, makeStyles } from "@material-ui/core/styles";
@@ -135,7 +135,7 @@ const Portfolio = () => {
 
   const myRef = useRef(null);
 
-  const [projects, setProjects] = useState(getProjects);
+  const [projects, setProjects] = useState(projectLists);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedMenu, setSelectedMenu] = useState(1);
   const [selectedProject, setSelectedProject] = useState([]);
@@ -259,7 +259,7 @@ const Portfolio = () => {
               }}
               onClick={() => {
                 setSelectedMenu(1);
-                setProjects(getProjects);
+                setProjects(projectLists);
                 handleClose();
               }}
             >

@@ -26,7 +26,7 @@ import rebrandly from "../assets/rebrandly.png";
 import tmdb from "../assets/TMDB.svg";
 import edamam from "../assets/edamam.png";
 
-const projectList = [
+export const projectLists = [
   {
     id: 0,
     name: "Mooville",
@@ -315,32 +315,4 @@ const projectList = [
       },
     ],
   },
-  // {
-  //   id: 5,
-  //   name: "Javascript Quiz",
-  //   img: quizImg,
-  //   alt: "Quiz App",
-  //   date: new Date("2020-01-04"),
-  //   selected: false,
-  //   description: "This is the Javascript Quiz Project",
-  //   images: [
-  //     { id: 0, link: quizImg2, alt: "Slide One" },
-  //     { id: 1, link: quizImg, alt: "Slide Two" },
-  //     { id: 1, link: quizImg3, alt: "Slide Three" },
-  //   ],
-  //   repo: "https://github.com/hmdNetizen/Quiz-Application",
-  //   functionalities: [],
-  //   techs: [
-  //     { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
-  //     { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-  //     { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-  //     { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-  //   ],
-  // },
 ];
-
-const getProjects = () => {
-  return projectList;
-};
-
-export default getProjects;
