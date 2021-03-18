@@ -53,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
 
   middleGrid: {
     backgroundColor: theme.palette.common.dollar,
-    paddingLeft: "4em",
-    paddingRight: "4em",
+    paddingLeft: "3.5em",
+    paddingRight: "3.5em",
 
     [theme.breakpoints.down("md")]: {
       paddingLeft: "3em",
@@ -73,10 +73,6 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: "4em",
       paddingBottom: "4em",
     },
-  },
-
-  rightGrid: {
-    backgroundColor: theme.palette.common.tan,
   },
 
   menuGrid: {
@@ -190,27 +186,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const lists = [
-  { id: 1, label: "Home", icon: home, link: "#homepage" },
+  { id: 1, label: "Home", icon: home, link: "/#homepage" },
   {
     id: 2,
     label: "Services",
     icon: devices,
-    link: "#services",
+    link: "/#services",
   },
   {
     id: 3,
     label: "Portfolio",
     icon: portfolio,
-    link: "#portfolio",
+    link: "/#portfolio",
   },
   {
     id: 4,
     label: "Resume",
     icon: file,
-    link: "#resume",
+    link: "/#resume",
   },
-  { id: 5, label: "Skills", icon: skills, link: "#skills" },
-  { id: 6, label: "Contact", icon: email, link: "#contact" },
+  { id: 5, label: "Skills", icon: skills, link: "/#skills" },
+  { id: 6, label: "Contact", icon: email, link: "/#contact" },
 ];
 
 const About = () => {
@@ -232,7 +228,7 @@ const About = () => {
   useEffect(() => {
     [...lists].forEach((list) => {
       switch (window.location.pathname) {
-        case `${list.link}`:
+        case list.link:
           if (selectedItem !== list.id) {
             setSelectedItem(list.id);
           }
@@ -241,7 +237,7 @@ const About = () => {
           break;
       }
     });
-  });
+  }, [selectedItem]);
 
   return (
     <Grid
@@ -522,7 +518,7 @@ const About = () => {
               ? "2em"
               : matchesMD
               ? "1em"
-              : "1em",
+              : 0,
           }}
         >
           <Fade top>
