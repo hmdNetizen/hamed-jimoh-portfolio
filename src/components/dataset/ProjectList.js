@@ -42,7 +42,7 @@ export const projectLists = [
       { id: 1, link: githubjob2, alt: "Slide Two" },
       { id: 2, link: githubjob3, alt: "Slide Three" },
     ],
-    liveURL: "https://hmdnetizen-github-jobs.netlify.app/",
+    liveURL: "https://hmdnetizen-github-jobs.vercel.app/",
     repo: "https://github.com/hmdNetizen/Github-jobs",
     functionalities: [
       {
