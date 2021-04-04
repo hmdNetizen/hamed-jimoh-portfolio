@@ -4,9 +4,9 @@ import recipeSearchApp3 from "../../assets/recipeimage3.png";
 import urlshortenerImg1 from "../../assets/urlshortenerImg1.jpg";
 import urlShortenerImg2 from "../../assets/urlShortenerImg2.png";
 import urlShortenerImg3 from "../../assets/urlShortenerImg3.jpg";
-import booklist from "../../assets/booklist1.png";
-import booklist2 from "../../assets/booklist2.png";
-import booklist3 from "../../assets/booklist3.png";
+import githubjob1 from "../../assets/github-job1.png";
+import githubjob2 from "../../assets/github-job2.png";
+import githubjob3 from "../../assets/github-job3.png";
 import easyBank from "../../assets/EasybankLandingPage.png";
 import easyBank2 from "../../assets/EasybankLandingPage2.jpg";
 import easyBank3 from "../../assets/EasybankLandingPage3.jpg";
@@ -25,10 +25,81 @@ import materialUI from "../../assets/material-ui.svg";
 import rebrandly from "../../assets/rebrandly.png";
 import tmdb from "../../assets/TMDB.svg";
 import edamam from "../../assets/edamam.png";
+import github from "../../assets/github.svg";
 
 export const projectLists = [
   {
     id: 0,
+    name: "Github Jobs",
+    img: githubjob1,
+    alt: "Logo",
+    date: new Date("2021-04-21"),
+    selected: false,
+    description:
+      "This is a challenge from devchallenges.io. It a web application for software developers' job listings and applications.",
+    images: [
+      { id: 0, link: githubjob1, alt: "Slide One" },
+      { id: 1, link: githubjob2, alt: "Slide Two" },
+      { id: 2, link: githubjob3, alt: "Slide Three" },
+    ],
+    liveURL: "https://hmdnetizen-github-jobs.netlify.app/",
+    repo: "https://github.com/hmdNetizen/Github-jobs",
+    functionalities: [
+      {
+        id: 0,
+        description: "I can see a list of jobs in a city by default",
+      },
+      { id: 1, description: "I can search for jobs with a given keyword" },
+      {
+        id: 2,
+        description:
+          "I can search for jobs with a city name, zip code, or other location",
+      },
+      {
+        id: 3,
+        description: "Display short movie trailer, rating and overview",
+      },
+      {
+        id: 4,
+        description:
+          "I can select one option from at least 4 pre-defined options",
+      },
+      {
+        id: 5,
+        description: "I can search for a full-time job only",
+      },
+      {
+        id: 6,
+        description:
+          "I can see a list of jobs with their logo, company name, location, and posted time",
+      },
+      {
+        id: 7,
+        description:
+          "When I select a job, I can see job descriptions and how to apply like the given design.",
+      },
+      {
+        id: 8,
+        description: "I can see jobs on different pages, 5 items on each page",
+      },
+      {
+        id: 9,
+        description:
+          "Receive an error message when the 'form' is submitted if:",
+        options: ["The 'input' field is empty"],
+      },
+    ],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: sassIcon, alt: "Sass Logo", title: "Sass" },
+      { id: 3, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 4, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      { id: 5, logo: github, alt: "GitHub Logo", title: "GitHub Jobs API" },
+    ],
+  },
+  {
+    id: 1,
     name: "Mooville",
     img: mooville1,
     alt: "Logo",
@@ -78,7 +149,7 @@ export const projectLists = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     name: "URL Shortener",
     img: urlshortenerImg1,
     alt: "Url Shortener",
@@ -137,7 +208,7 @@ export const projectLists = [
   },
 
   {
-    id: 2,
+    id: 3,
     name: "Chefs Mentor",
     img: recipeSearchApp,
     alt: "Chefs Mentor",
@@ -185,41 +256,41 @@ export const projectLists = [
       { id: 4, logo: edamam, alt: "Edamam Logo", title: "Edamam API" },
     ],
   },
-  {
-    id: 3,
-    name: "Booklist Tracker with Dark Mode",
-    img: booklist,
-    alt: "Book List",
-    date: new Date("2020-07-07"),
-    selected: false,
-    description:
-      "This project keeps track of the different books that I have marked for read. It incorporates dark theme that alternates between purple and dark theme. It also uses basic CRUD functionalities.",
-    images: [
-      { id: 0, link: booklist, alt: "Slide One" },
-      { id: 1, link: booklist2, alt: "Slide Two" },
-      { id: 2, link: booklist3, alt: "Slide Three" },
-    ],
+  // {
+  //   id: 4,
+  //   name: "Booklist Tracker with Dark Mode",
+  //   img: booklist,
+  //   alt: "Book List",
+  //   date: new Date("2020-07-07"),
+  //   selected: false,
+  //   description:
+  //     "This project keeps track of the different books that I have marked for read. It incorporates dark theme that alternates between purple and dark theme. It also uses basic CRUD functionalities.",
+  //   images: [
+  //     { id: 0, link: booklist, alt: "Slide One" },
+  //     { id: 1, link: booklist2, alt: "Slide Two" },
+  //     { id: 2, link: booklist3, alt: "Slide Three" },
+  //   ],
 
-    repo: "https://github.com/hmdNetizen/BookList-App-With-Dark-Mode",
-    functionalities: [
-      {
-        id: 0,
-        description:
-          "Fecth, create, update and delete books from the local storage",
-      },
-      { id: 1, description: "Alternates between purple and dark theme" },
-      {
-        id: 2,
-        description: "Monitors the number of books to be read",
-      },
-    ],
-    techs: [
-      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
-      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-    ],
-  },
+  //   repo: "https://github.com/hmdNetizen/BookList-App-With-Dark-Mode",
+  //   functionalities: [
+  //     {
+  //       id: 0,
+  //       description:
+  //         "Fecth, create, update and delete books from the local storage",
+  //     },
+  //     { id: 1, description: "Alternates between purple and dark theme" },
+  //     {
+  //       id: 2,
+  //       description: "Monitors the number of books to be read",
+  //     },
+  //   ],
+  //   techs: [
+  //     { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+  //     { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+  //     { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+  //     { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+  //   ],
+  // },
   {
     id: 4,
     name: "EasyBank Landing Page",
