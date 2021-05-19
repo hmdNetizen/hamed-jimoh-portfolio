@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -98,6 +98,17 @@ const SelectedProject = (props) => {
   const matchesXXS = useMediaQuery("(max-width:450px)");
   const matchesXXXS = useMediaQuery("(max-width:340px)");
 
+  const myRef = React.useRef();
+
+  useEffect(() => {
+    if (matchesXS) {
+      window.scrollTo(0, myRef.current.offsetTop + 700);
+    } else {
+      window.scrollTo(0, myRef.current.offsetTop + 650);
+    }
+    //eslint-disable-next-line
+  }, [myRef]);
+
   return (
     <Bounce top>
       <Grid
@@ -117,7 +128,7 @@ const SelectedProject = (props) => {
           overflowX: "hidden",
         }}
       >
-        <Grid item style={{ marginBottom: "1.5em" }}>
+        <Grid item style={{ marginBottom: "1.5em" }} ref={myRef}>
           <Button
             variant="contained"
             className={classes.arrowButton}
