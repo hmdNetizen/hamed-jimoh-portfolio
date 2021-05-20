@@ -100,6 +100,7 @@ const SelectedProject = (props) => {
 
   const myRef = React.useRef();
 
+// This makes the selected project scroll to the top of its section
   useEffect(() => {
     if (matchesXS) {
       window.scrollTo(0, myRef.current.offsetTop + 700);

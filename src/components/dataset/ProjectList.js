@@ -1,12 +1,13 @@
-import recipeSearchApp from "../../assets/RecipeSearchApp.png";
-import recipeSearchApp2 from "../../assets/recipeimage2.png";
-import recipeSearchApp3 from "../../assets/recipeimage3.png";
+// import recipeSearchApp from "../../assets/RecipeSearchApp.png";
+// import recipeSearchApp2 from "../../assets/recipeimage2.png";
+// import recipeSearchApp3 from "../../assets/recipeimage3.png";
 import urlshortenerImg1 from "../../assets/urlshortenerImg1.jpg";
 import urlShortenerImg2 from "../../assets/urlShortenerImg2.png";
 import urlShortenerImg3 from "../../assets/urlShortenerImg3.jpg";
 import githubjob1 from "../../assets/github-job1.png";
 import githubjob2 from "../../assets/github-job2.png";
 import githubjob3 from "../../assets/github-job3.png";
+import safewash1 from "../../assets/safewash1.png";
 import easyBank from "../../assets/EasybankLandingPage.png";
 import easyBank2 from "../../assets/EasybankLandingPage2.jpg";
 import easyBank3 from "../../assets/EasybankLandingPage3.jpg";
@@ -24,12 +25,56 @@ import sassIcon from "../../assets/sass.svg";
 import materialUI from "../../assets/material-ui.svg";
 import rebrandly from "../../assets/rebrandly.png";
 import tmdb from "../../assets/TMDB.svg";
-import edamam from "../../assets/edamam.png";
+// import edamam from "../../assets/edamam.png";
 import github from "../../assets/github.svg";
 
 export const projectLists = [
   {
     id: 0,
+    name: "Safewash",
+    img: safewash1,
+    alt: "Safewash banner",
+    date: new Date("2021-04-06"),
+    selected: false,
+    description:
+      "This project was a thrown out as a challenge for budding developers who are aspiring to break into tech. The best solution was meant to be hosted and the developer getting rewarded with a laptop and a stipend for internet subscription.",
+    images: [
+      { id: 0, link: safewash1, alt: "Slide One" },
+      { id: 1, link: safewash1, alt: "Slide Two" },
+      { id: 2, link: safewash1, alt: "Slide Three" },
+    ],
+    liveURL: "https://safewash.vercel.app/",
+    repo: "https://github.com/hmdNetizen/safewash",
+    functionalities: [
+      {
+        id: 0,
+        description: "Implement the features provided in the mockup design",
+      },
+      {
+        id: 1,
+        description:
+          "Make implementation compatible across all screen sizes by employing either adaptive or responsive design",
+      },
+      {
+        id: 2,
+        description: "Handle routing across all page navigations",
+      },
+    ],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      {
+        id: 4,
+        logo: materialUI,
+        alt: "Material-UI Logo",
+        title: "Material-UI",
+      },
+    ],
+  },
+  {
+    id: 1,
     name: "Github Jobs",
     img: githubjob1,
     alt: "Logo",
@@ -99,7 +144,7 @@ export const projectLists = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     name: "Mooville",
     img: mooville1,
     alt: "Logo",
@@ -149,7 +194,7 @@ export const projectLists = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "URL Shortener",
     img: urlshortenerImg1,
     alt: "Url Shortener",
@@ -207,55 +252,55 @@ export const projectLists = [
     ],
   },
 
-  {
-    id: 3,
-    name: "Chefs Mentor",
-    img: recipeSearchApp,
-    alt: "Chefs Mentor",
-    date: new Date("2020-05-09"),
-    selected: false,
-    description:
-      "This project was developed in the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
-    images: [
-      { id: 0, link: recipeSearchApp, alt: "Slide One" },
-      { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
-      { id: 2, link: recipeSearchApp3, alt: "Slide Three" },
-    ],
-    liveURL: "https://hmdnetizen.github.io/search-recipes/",
-    repo: "https://github.com/hmdNetizen/search-recipes",
-    functionalities: [
-      {
-        id: 0,
-        description:
-          "View the optimal layout for the site depending on their device's screen size",
-      },
-      {
-        id: 1,
-        description:
-          "Fetch recipe(s) and its variants based on the searched term",
-      },
-      {
-        id: 2,
-        description: "View more details about the individual recipe fetched",
-      },
-      {
-        id: 3,
-        description:
-          "Receive an error message when the 'form' is submitted if:",
-        options: [
-          "The 'input' field is empty",
-          "Recipe searched could not be found",
-        ],
-      },
-    ],
-    techs: [
-      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
-      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-      { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-      { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-      { id: 4, logo: edamam, alt: "Edamam Logo", title: "Edamam API" },
-    ],
-  },
+  // {
+  //   id: 3,
+  //   name: "Chefs Mentor",
+  //   img: recipeSearchApp,
+  //   alt: "Chefs Mentor",
+  //   date: new Date("2020-05-09"),
+  //   selected: false,
+  //   description:
+  //     "This project was developed in the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
+  //   images: [
+  //     { id: 0, link: recipeSearchApp, alt: "Slide One" },
+  //     { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
+  //     { id: 2, link: recipeSearchApp3, alt: "Slide Three" },
+  //   ],
+  //   liveURL: "https://hmdnetizen.github.io/search-recipes/",
+  //   repo: "https://github.com/hmdNetizen/search-recipes",
+  //   functionalities: [
+  //     {
+  //       id: 0,
+  //       description:
+  //         "View the optimal layout for the site depending on their device's screen size",
+  //     },
+  //     {
+  //       id: 1,
+  //       description:
+  //         "Fetch recipe(s) and its variants based on the searched term",
+  //     },
+  //     {
+  //       id: 2,
+  //       description: "View more details about the individual recipe fetched",
+  //     },
+  //     {
+  //       id: 3,
+  //       description:
+  //         "Receive an error message when the 'form' is submitted if:",
+  //       options: [
+  //         "The 'input' field is empty",
+  //         "Recipe searched could not be found",
+  //       ],
+  //     },
+  //   ],
+  //   techs: [
+  //     { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+  //     { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+  //     { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+  //     { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+  //     { id: 4, logo: edamam, alt: "Edamam Logo", title: "Edamam API" },
+  //   ],
+  // },
   // {
   //   id: 4,
   //   name: "Booklist Tracker with Dark Mode",
