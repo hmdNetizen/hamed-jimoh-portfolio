@@ -8,6 +8,8 @@ import githubjob1 from "../../assets/github-job1.png";
 import githubjob2 from "../../assets/github-job2.png";
 import githubjob3 from "../../assets/github-job3.png";
 import safewash1 from "../../assets/safewash1.png";
+import safewash2 from "../../assets/safewash2.png";
+import safewash3 from "../../assets/safewash3.png";
 import easyBank from "../../assets/EasybankLandingPage.png";
 import easyBank2 from "../../assets/EasybankLandingPage2.jpg";
 import easyBank3 from "../../assets/EasybankLandingPage3.jpg";
@@ -40,8 +42,8 @@ export const projectLists = [
       "This project was a thrown out as a challenge for budding developers who are aspiring to break into tech. The best solution was meant to be hosted and the developer getting rewarded with a laptop and a stipend for internet subscription.",
     images: [
       { id: 0, link: safewash1, alt: "Slide One" },
-      { id: 1, link: safewash1, alt: "Slide Two" },
-      { id: 2, link: safewash1, alt: "Slide Three" },
+      { id: 1, link: safewash2, alt: "Slide Two" },
+      { id: 2, link: safewash3, alt: "Slide Three" },
     ],
     liveURL: "https://safewash.vercel.app/",
     repo: "https://github.com/hmdNetizen/safewash",

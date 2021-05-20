@@ -365,6 +365,7 @@ const Portfolio = () => {
                     variant="h4"
                     style={{
                       fontWeight: 700,
+                      fontFamily: "pacifico",
                       textAlign: "center",
                       fontSize: "1.5rem",
                       color: theme.palette.common.gold,
