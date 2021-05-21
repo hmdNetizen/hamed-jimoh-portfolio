@@ -39,7 +39,7 @@ export const projectLists = [
     date: new Date("2021-04-06"),
     selected: false,
     description:
-      "This project was a thrown out as a challenge for budding developers who are aspiring to break into tech. The best solution was meant to be hosted and the developer getting rewarded with a laptop and a stipend for internet subscription.",
+      "This project was thrown out as a challenge for budding developers who are aspiring to break into tech. The best solution was meant to be hosted and the developer getting rewarded with a laptop and a stipend for internet subscription.",
     images: [
       { id: 0, link: safewash1, alt: "Slide One" },
       { id: 1, link: safewash2, alt: "Slide Two" },
@@ -83,7 +83,7 @@ export const projectLists = [
     date: new Date("2021-04-21"),
     selected: false,
     description:
-      "This is a challenge from devchallenges.io. It a web application for software developers' job listings and applications.",
+      "This is a challenge from devchallenges.io. It is a web application for software developers' job listings and applications.",
     images: [
       { id: 0, link: githubjob1, alt: "Slide One" },
       { id: 1, link: githubjob2, alt: "Slide Two" },
