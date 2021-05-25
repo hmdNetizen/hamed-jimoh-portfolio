@@ -39,7 +39,7 @@ export const projectLists = [
     date: new Date("2021-04-06"),
     selected: false,
     description:
-      "This project was thrown out as a challenge for budding developers who are aspiring to break into tech. The best solution was meant to be hosted and the developer getting rewarded with a laptop and a stipend for internet subscription.",
+      "This project was thrown out as a challenge to budding developers who are aspiring to break into tech. The best solution is to be hosted and the developer is rewarded with a laptop and a stipend for internet subscription.",
     images: [
       { id: 0, link: safewash1, alt: "Slide One" },
       { id: 1, link: safewash2, alt: "Slide Two" },
