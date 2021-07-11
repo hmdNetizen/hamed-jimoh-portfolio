@@ -104,13 +104,54 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     color: "#fff",
   },
-  avatar: {
+  avatarCircleLG: {
+    position: "relative",
+    borderRadius: "50%",
+
+    [theme.breakpoints.down("sm")]: {
+      background: "#eddfd5",
+      width: 140,
+      height: 140,
+    },
+  },
+
+  avatarCircleMD: {
+    ...theme.typography.circle,
     width: 150,
     height: 150,
+    background: "#967258",
 
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
+      background: "#efdbce",
+      width: 120,
+      height: 120,
+    },
+  },
+
+  avatarCircleSM: {
+    ...theme.typography.circle,
+    width: 130,
+    height: 130,
+    background: "#84624a",
+
+    [theme.breakpoints.down("sm")]: {
+      background: "#edd2c0",
       width: 100,
       height: 100,
+    },
+  },
+
+  avatar: {
+    width: 110,
+    height: 110,
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+
+    [theme.breakpoints.down("sm")]: {
+      width: 80,
+      height: 80,
     },
   },
   drawer: {
@@ -298,7 +339,7 @@ const About = () => {
                 alignItems="center"
                 justify="center"
                 style={{
-                  marginTop: matchesSM ? 0 : "1.5em",
+                  marginTop: matchesSM ? 0 : "1em",
                 }}
               >
                 <Grid item>
@@ -323,12 +364,18 @@ const About = () => {
               justify="center"
               style={{ marginBottom: "2em" }}
             >
-              <Avatar
-                alt="Hamed's Photo"
-                src={passport}
-                size={20}
-                className={classes.avatar}
-              />
+              <div className={classes.avatarCircleLG}>
+                <div className={classes.avatarCircleMD}>
+                  <div className={classes.avatarCircleSM}>
+                    <Avatar
+                      alt="Hamed's Photo"
+                      src={passport}
+                      size={20}
+                      className={classes.avatar}
+                    />
+                  </div>
+                </div>
+              </div>
             </Grid>
             <Grid
               item
@@ -500,12 +547,18 @@ const About = () => {
             }}
           >
             <Fade left>
-              <Avatar
-                alt="Hamed's Photo"
-                src={passport}
-                size={20}
-                className={classes.avatar}
-              />
+              <div className={classes.avatarCircleLG}>
+                <div className={classes.avatarCircleMD}>
+                  <div className={classes.avatarCircleSM}>
+                    <Avatar
+                      alt="Hamed's Photo"
+                      src={passport}
+                      size={20}
+                      className={classes.avatar}
+                    />
+                  </div>
+                </div>
+              </div>
             </Fade>
           </Grid>
         </Hidden>
