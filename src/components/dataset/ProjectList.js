@@ -1,12 +1,12 @@
-// import recipeSearchApp from "../../assets/RecipeSearchApp.png";
-// import recipeSearchApp2 from "../../assets/recipeimage2.png";
-// import recipeSearchApp3 from "../../assets/recipeimage3.png";
 import urlshortenerImg1 from "../../assets/urlshortenerImg1.jpg";
 import urlShortenerImg2 from "../../assets/urlShortenerImg2.png";
 import urlShortenerImg3 from "../../assets/urlShortenerImg3.jpg";
-import githubjob1 from "../../assets/github-job1.png";
-import githubjob2 from "../../assets/github-job2.png";
-import githubjob3 from "../../assets/github-job3.png";
+// import githubjob1 from "../../assets/github-job1.png";
+// import githubjob2 from "../../assets/github-job2.png";
+// import githubjob3 from "../../assets/github-job3.png";
+import weathershot1 from "../../assets/weather-shot1.png";
+import weathershot2 from "../../assets/weather-shot2.png";
+import weathershot3 from "../../assets/weather-shot3.png";
 import safewash1 from "../../assets/safewash1.png";
 import safewash2 from "../../assets/safewash2.png";
 import safewash3 from "../../assets/safewash3.png";
@@ -22,17 +22,87 @@ import mooville3 from "../../assets/mooville3.png";
 import htmlIcon from "../../assets/html5.svg";
 import cssIcon from "../../assets/css3.svg";
 import jsIcon from "../../assets/javascript.svg";
+import tsIcon from "../../assets/typescript.svg";
 import reactIcon from "../../assets/react.svg";
 import sassIcon from "../../assets/sass.svg";
 import materialUI from "../../assets/material-ui.svg";
 import rebrandly from "../../assets/rebrandly.png";
+import metaweather from "../../assets/meta-weather.png";
 import tmdb from "../../assets/TMDB.svg";
 // import edamam from "../../assets/edamam.png";
-import github from "../../assets/github.svg";
+// import github from "../../assets/github.svg";
 
 export const projectLists = [
   {
     id: 0,
+    name: "Weather Previewer",
+    img: weathershot1,
+    alt: "Logo",
+    date: new Date("2021-04-21"),
+    selected: false,
+    description:
+      "This is a challenge from devchallenges.io. It is a web application for visualizing the weather conditions across the world.",
+    images: [
+      { id: 0, link: weathershot1, alt: "Slide One" },
+      { id: 1, link: weathershot2, alt: "Slide Two" },
+      { id: 2, link: weathershot3, alt: "Slide Three" },
+    ],
+    liveURL: "https://hmdnetizen-weather-app.netlify.app/",
+    repo: "https://github.com/hmdNetizen/weather-app",
+    functionalities: [
+      {
+        id: 0,
+        description:
+          "I can see city weather as default, preferably my current location",
+      },
+      { id: 1, description: "I can search for city" },
+      {
+        id: 2,
+        description: "I can see weather of today and the next 5 days",
+      },
+      {
+        id: 3,
+        description: "I can see the date and location of the weather",
+      },
+      {
+        id: 4,
+        description: "I can see according to image for each type of weather",
+      },
+      {
+        id: 5,
+        description: "I can see the min and max degree each day",
+      },
+      {
+        id: 6,
+        description: "I can request my current location weather",
+      },
+      {
+        id: 7,
+        description:
+          "I can convert temperature in Celcius to Fahrenheit and vice versa",
+      },
+      {
+        id: 8,
+        description: "I can see the min and max degree each day",
+      },
+    ],
+    techs: [
+      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
+      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
+      { id: 2, logo: sassIcon, alt: "Sass Logo", title: "Sass" },
+      { id: 3, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
+      { id: 3, logo: tsIcon, alt: "Typescript Logo", title: "Typescript" },
+      { id: 4, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
+      {
+        id: 5,
+        logo: metaweather,
+        alt: "Meta Weather Logo",
+        title: "Meta Weather API",
+      },
+    ],
+  },
+  {
+    id: 1,
     name: "Safewash",
     img: safewash1,
     alt: "Safewash banner",
@@ -75,76 +145,7 @@ export const projectLists = [
       },
     ],
   },
-  {
-    id: 1,
-    name: "Github Jobs",
-    img: githubjob1,
-    alt: "Logo",
-    date: new Date("2021-04-21"),
-    selected: false,
-    description:
-      "This is a challenge from devchallenges.io. It is a web application for software developers' job listings and applications.",
-    images: [
-      { id: 0, link: githubjob1, alt: "Slide One" },
-      { id: 1, link: githubjob2, alt: "Slide Two" },
-      { id: 2, link: githubjob3, alt: "Slide Three" },
-    ],
-    liveURL: "https://hmdnetizen-github-jobs.vercel.app/",
-    repo: "https://github.com/hmdNetizen/Github-jobs",
-    functionalities: [
-      {
-        id: 0,
-        description: "I can see a list of jobs in a city by default",
-      },
-      { id: 1, description: "I can search for jobs with a given keyword" },
-      {
-        id: 2,
-        description:
-          "I can search for jobs with a city name, zip code, or other location",
-      },
-      {
-        id: 3,
-        description: "Display short movie trailer, rating and overview",
-      },
-      {
-        id: 4,
-        description:
-          "I can select one option from at least 4 pre-defined options",
-      },
-      {
-        id: 5,
-        description: "I can search for a full-time job only",
-      },
-      {
-        id: 6,
-        description:
-          "I can see a list of jobs with their logo, company name, location, and posted time",
-      },
-      {
-        id: 7,
-        description:
-          "When I select a job, I can see job descriptions and how to apply like the given design.",
-      },
-      {
-        id: 8,
-        description: "I can see jobs on different pages, 5 items on each page",
-      },
-      {
-        id: 9,
-        description:
-          "Receive an error message when the 'form' is submitted if:",
-        options: ["The 'input' field is empty"],
-      },
-    ],
-    techs: [
-      { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
-      { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-      { id: 2, logo: sassIcon, alt: "Sass Logo", title: "Sass" },
-      { id: 3, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-      { id: 4, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-      { id: 5, logo: github, alt: "GitHub Logo", title: "GitHub Jobs API" },
-    ],
-  },
+
   {
     id: 2,
     name: "Mooville",
