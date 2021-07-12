@@ -107,6 +107,9 @@ const useStyles = makeStyles((theme) => ({
   avatarCircleLG: {
     position: "relative",
     borderRadius: "50%",
+    background: "#a57b5c",
+    width: 170,
+    height: 170,
 
     [theme.breakpoints.down("sm")]: {
       background: "#eddfd5",
