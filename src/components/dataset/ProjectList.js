@@ -41,7 +41,7 @@ export const projectLists = [
     date: new Date("2021-04-21"),
     selected: false,
     description:
-      "This is a challenge from devchallenges.io. It is a web application for visualizing the weather conditions across the world.",
+      "This is a project challenge on devchallenges.io. It is a web application for visualizing the weather conditions across the world.",
     images: [
       { id: 0, link: weathershot1, alt: "Slide One" },
       { id: 1, link: weathershot2, alt: "Slide Two" },
@@ -254,91 +254,6 @@ export const projectLists = [
       { id: 5, logo: rebrandly, alt: "Rebrandly Logo", title: "Rebrandly API" },
     ],
   },
-
-  // {
-  //   id: 3,
-  //   name: "Chefs Mentor",
-  //   img: recipeSearchApp,
-  //   alt: "Chefs Mentor",
-  //   date: new Date("2020-05-09"),
-  //   selected: false,
-  //   description:
-  //     "This project was developed in the heat of the COVID-19 pandemic when every person was forced to remain indoors. I discovered that a lot of people were willing to try out some new dishes but are quite unsure of the right recipes to get the dishes done. Hence, the birth of this project.",
-  //   images: [
-  //     { id: 0, link: recipeSearchApp, alt: "Slide One" },
-  //     { id: 1, link: recipeSearchApp2, alt: "Slide Two" },
-  //     { id: 2, link: recipeSearchApp3, alt: "Slide Three" },
-  //   ],
-  //   liveURL: "https://hmdnetizen.github.io/search-recipes/",
-  //   repo: "https://github.com/hmdNetizen/search-recipes",
-  //   functionalities: [
-  //     {
-  //       id: 0,
-  //       description:
-  //         "View the optimal layout for the site depending on their device's screen size",
-  //     },
-  //     {
-  //       id: 1,
-  //       description:
-  //         "Fetch recipe(s) and its variants based on the searched term",
-  //     },
-  //     {
-  //       id: 2,
-  //       description: "View more details about the individual recipe fetched",
-  //     },
-  //     {
-  //       id: 3,
-  //       description:
-  //         "Receive an error message when the 'form' is submitted if:",
-  //       options: [
-  //         "The 'input' field is empty",
-  //         "Recipe searched could not be found",
-  //       ],
-  //     },
-  //   ],
-  //   techs: [
-  //     { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
-  //     { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-  //     { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-  //     { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-  //     { id: 4, logo: edamam, alt: "Edamam Logo", title: "Edamam API" },
-  //   ],
-  // },
-  // {
-  //   id: 4,
-  //   name: "Booklist Tracker with Dark Mode",
-  //   img: booklist,
-  //   alt: "Book List",
-  //   date: new Date("2020-07-07"),
-  //   selected: false,
-  //   description:
-  //     "This project keeps track of the different books that I have marked for read. It incorporates dark theme that alternates between purple and dark theme. It also uses basic CRUD functionalities.",
-  //   images: [
-  //     { id: 0, link: booklist, alt: "Slide One" },
-  //     { id: 1, link: booklist2, alt: "Slide Two" },
-  //     { id: 2, link: booklist3, alt: "Slide Three" },
-  //   ],
-
-  //   repo: "https://github.com/hmdNetizen/BookList-App-With-Dark-Mode",
-  //   functionalities: [
-  //     {
-  //       id: 0,
-  //       description:
-  //         "Fecth, create, update and delete books from the local storage",
-  //     },
-  //     { id: 1, description: "Alternates between purple and dark theme" },
-  //     {
-  //       id: 2,
-  //       description: "Monitors the number of books to be read",
-  //     },
-  //   ],
-  //   techs: [
-  //     { id: 0, logo: htmlIcon, alt: "Html Logo", title: "HTML5" },
-  //     { id: 1, logo: cssIcon, alt: "CSS Logo", title: "CSS3" },
-  //     { id: 2, logo: jsIcon, alt: "Javascript Logo", title: "JavaScript" },
-  //     { id: 3, logo: reactIcon, alt: "React Logo", title: "ReactJS" },
-  //   ],
-  // },
   {
     id: 4,
     name: "EasyBank Landing Page",
