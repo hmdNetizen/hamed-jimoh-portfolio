@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
       [theme.breakpoints.down("xs")]: {
         left: "-2.5em",
+        height: "95%",
       },
     },
   },
