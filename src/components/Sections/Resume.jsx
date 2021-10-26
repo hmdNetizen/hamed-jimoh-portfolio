@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { works } from "../dataset/work-experience";
 
 import LightSpeed from "react-reveal/LightSpeed";
 import Fade from "react-reveal/Fade";
@@ -22,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
       background: theme.palette.common.gold,
       top: "3em",
       left: "-1.5em",
+
+      [theme.breakpoints.down("xs")]: {
+        left: "-2.5em",
+      },
     },
   },
   timelineItem: {
@@ -37,6 +42,12 @@ const useStyles = makeStyles((theme) => ({
       position: "absolute",
       top: ".25em",
       left: "-3em",
+
+      [theme.breakpoints.down("xs")]: {
+        width: 25,
+        height: 25,
+        left: "-3.65em",
+      },
     },
   },
   timelineDate: {
@@ -165,289 +176,87 @@ const Resume = () => {
               </LightSpeed>
             </Grid>
             {/* First work experience section */}
-            <Grid container className={classes.timelineBody}>
-              <Grid item>
-                <Grid container className={classes.timelineItem}>
-                  <Grid item>
-                    <LightSpeed left>
-                      <Typography variant="h5" className={classes.timelineDate}>
-                        2020
-                      </Typography>
-                    </LightSpeed>
-                  </Grid>
-                  <Grid
-                    item
-                    container
-                    direction="column"
-                    className={classes.timelineContent}
-                  >
-                    <Grid item style={{ marginTop: ".35em" }}>
-                      <Fade bottom>
-                        <Typography
-                          variant="h4"
-                          gutterBottom
-                          className={classes.role}
-                        >
-                          Operations Officer
-                        </Typography>
-                      </Fade>
-                    </Grid>
+            {works.map((work) => (
+              <Grid container className={classes.timelineBody} key={work.id}>
+                <Grid item>
+                  <Grid container className={classes.timelineItem}>
                     <Grid item>
-                      <Fade bottom>
+                      <LightSpeed left>
                         <Typography
                           variant="h5"
-                          gutterBottom
-                          className={classes.organisation}
+                          className={classes.timelineDate}
                         >
-                          The Shred Station
+                          {work.year}
                         </Typography>
-                      </Fade>
+                      </LightSpeed>
                     </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <Typography
-                          variant="body1"
-                          paragraph
-                          className={classes.timeframe}
-                        >
-                          Jan 2020 - Present
-                        </Typography>
-                      </Fade>
-                    </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <ul
-                          style={{
-                            margin: 0,
-                            paddingLeft: "1em",
-                            maxWidth: matchesSMXX
-                              ? "35em"
-                              : matchesSM
-                              ? undefined
-                              : matchesMD
-                              ? "40em"
-                              : undefined,
-                          }}
-                        >
-                          <li className={classes.experienceList}>
-                            Oversee and direct daily company administrative
-                            processes and procedures
-                          </li>
-                          <li className={classes.experienceList}>
-                            Planning and management of project execution
-                          </li>
-                          <li className={classes.experienceList}>
-                            Oversee the destruction of clients’ confidential
-                            documents and the eventual recycling
-                          </li>
-                          <li className={classes.experienceList}>
-                            Track and maintain budgets of operational costs
-                          </li>
-                          <li className={classes.experienceList}>
-                            Set operational goals to meet or exceed performance
-                            expectations.
-                          </li>
-                          <li className={classes.experienceList}>
-                            Development and promotion of efficiency through the
-                            implementation of improved operational frameworks
-                            and procedures
-                          </li>
-                        </ul>
-                      </Fade>
+                    <Grid
+                      item
+                      container
+                      direction="column"
+                      className={classes.timelineContent}
+                    >
+                      <Grid item style={{ marginTop: ".35em" }}>
+                        <Fade bottom>
+                          <Typography
+                            variant="h4"
+                            gutterBottom
+                            className={classes.role}
+                          >
+                            {work.role}
+                          </Typography>
+                        </Fade>
+                      </Grid>
+                      <Grid item>
+                        <Fade bottom>
+                          <Typography
+                            variant="h5"
+                            gutterBottom
+                            className={classes.organisation}
+                          >
+                            {work.company}
+                          </Typography>
+                        </Fade>
+                      </Grid>
+                      <Grid item>
+                        <Fade bottom>
+                          <Typography
+                            variant="body1"
+                            paragraph
+                            className={classes.timeframe}
+                          >
+                            {work.period}
+                          </Typography>
+                        </Fade>
+                      </Grid>
+                      <Grid item>
+                        <Fade bottom>
+                          <ul
+                            style={{
+                              margin: 0,
+                              paddingLeft: "1em",
+                              maxWidth: matchesSMXX
+                                ? "35em"
+                                : matchesSM
+                                ? undefined
+                                : matchesMD
+                                ? "40em"
+                                : undefined,
+                            }}
+                          >
+                            {work.duties.map((duty) => (
+                              <li className={classes.experienceList} key={duty}>
+                                {duty}
+                              </li>
+                            ))}
+                          </ul>
+                        </Fade>
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-            {/* Second work experience section */}
-            <Grid container className={classes.timelineBody}>
-              <Grid item>
-                <Grid container className={classes.timelineItem}>
-                  <Grid item>
-                    <LightSpeed left>
-                      <Typography variant="h5" className={classes.timelineDate}>
-                        2019
-                      </Typography>
-                    </LightSpeed>
-                  </Grid>
-                  <Grid
-                    item
-                    container
-                    direction="column"
-                    className={classes.timelineContent}
-                  >
-                    <Grid item style={{ marginTop: ".35em" }}>
-                      <Fade bottom>
-                        <Typography
-                          variant="h4"
-                          gutterBottom
-                          className={classes.role}
-                        >
-                          I.T. Technical Support
-                        </Typography>
-                      </Fade>
-                    </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <Typography
-                          variant="h5"
-                          gutterBottom
-                          className={classes.organisation}
-                        >
-                          A. C. Harmony Enterprise Nig. Ltd. Onitsha, Anambra
-                        </Typography>
-                      </Fade>
-                    </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <Typography
-                          variant="body1"
-                          paragraph
-                          className={classes.timeframe}
-                        >
-                          April 2019 - October 2019
-                        </Typography>
-                      </Fade>
-                    </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <ul
-                          style={{
-                            margin: 0,
-                            paddingLeft: "1em",
-                            maxWidth: matchesSMXX
-                              ? "35em"
-                              : matchesSM
-                              ? undefined
-                              : matchesMD
-                              ? "40em"
-                              : undefined,
-                          }}
-                        >
-                          <li className={classes.experienceList}>
-                            Install and configure computer hardware operating
-                            systems and applications
-                          </li>
-                          <li className={classes.experienceList}>
-                            Monitor and maintain computer systems and networks
-                          </li>
-                          <li className={classes.experienceList}>
-                            Talk staff through a series of actions either
-                            face-to-face or over the phone, to help set up
-                            systems or resolve issues
-                          </li>
-                          <li className={classes.experienceList}>
-                            Troubleshoot system and network problems, diagnosing
-                            and solving hardware or software faults
-                          </li>
-                          <li className={classes.experienceList}>
-                            Provide support, including procedural documentation
-                            and relevant reports
-                          </li>
-                          <li className={classes.experienceList}>
-                            Supervision and the verification of the posting of
-                            purchases, transfers and sales made using the
-                            automated web application software.
-                          </li>
-                        </ul>
-                      </Fade>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-            {/* Third work experience section */}
-            <Grid container className={classes.timelineBody}>
-              <Grid item>
-                <Grid container className={classes.timelineItem}>
-                  <Grid item>
-                    <LightSpeed left>
-                      <Typography variant="h5" className={classes.timelineDate}>
-                        2018
-                      </Typography>
-                    </LightSpeed>
-                  </Grid>
-                  <Grid
-                    item
-                    container
-                    direction="column"
-                    className={classes.timelineContent}
-                  >
-                    <Grid item style={{ marginTop: ".35em" }}>
-                      <Fade bottom>
-                        <Typography
-                          variant="h4"
-                          gutterBottom
-                          className={classes.role}
-                        >
-                          Government &amp; Civic Education Teacher
-                        </Typography>
-                      </Fade>
-                    </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <Typography
-                          variant="h5"
-                          gutterBottom
-                          className={classes.organisation}
-                        >
-                          Anglican Girls Secondary School, Nnewi (NYSC)
-                        </Typography>
-                      </Fade>
-                    </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <Typography
-                          variant="body1"
-                          paragraph
-                          className={classes.timeframe}
-                        >
-                          February 2018 - March 2019
-                        </Typography>
-                      </Fade>
-                    </Grid>
-                    <Grid item>
-                      <Fade bottom>
-                        <ul
-                          style={{
-                            margin: 0,
-                            paddingLeft: "1em",
-                            maxWidth: matchesSMXX
-                              ? "35em"
-                              : matchesSM
-                              ? undefined
-                              : matchesMD
-                              ? "40em"
-                              : undefined,
-                          }}
-                        >
-                          <li className={classes.experienceList}>
-                            Impart the students with knowledge relating to
-                            citizenship and government, structured in line with
-                            the school curriculum.
-                          </li>
-                          <li className={classes.experienceList}>
-                            Examine the students’ comprehension and assimilation
-                            through class exercises and assignments.
-                          </li>
-                          <li className={classes.experienceList}>
-                            Research using different textbooks and online
-                            resources to provide students with in-depth
-                            knowledge and examples relating to the topic of
-                            discourse.
-                          </li>
-                          <li className={classes.experienceList}>
-                            In addition to knowledge impartation, help develop
-                            students’ personalities by sermonizing them on basic
-                            moral precepts.
-                          </li>
-                        </ul>
-                      </Fade>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
+            ))}
           </Grid>
           <Grid
             item
