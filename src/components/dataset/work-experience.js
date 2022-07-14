@@ -1,9 +1,22 @@
 export const works = [
   {
-    id: 0,
+    id: 1,
+    company: "Brand Central Wholesale, New York",
+    role: "Lead Developer",
+    period: "Dec 2021 - Present",
+    year: 2021,
+    duties: [
+      "Designed, implemented, and shipped the entire front-end for a B2B eCommerce website.",
+      "Managed development and design of backend and API by engineering team",
+      "Concurrently delivered an administration site for managing sales, database, users, etc.",
+      "Solely responsible for converting non-technical specifications from the CEO into a finished website.",
+    ],
+  },
+  {
+    id: 1,
     company: "Code Inclusive, Nigeria",
     role: "Frontend Developer (ReactJS)",
-    period: "Jul 2021 - Present",
+    period: "Jul 2021 - Jan 2022",
     year: 2021,
     duties: [
       "Refactored a trading website while live in production without downtime incidents.",
@@ -13,7 +26,7 @@ export const works = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     company: "Black Valley, UK",
     role: "Software Developer Mentee",
     period: "Jul 2021 - Sep 2021",
@@ -23,21 +36,6 @@ export const works = [
       "Introduced to the concept of automated testing and its varying tools and frameworks.",
       "Implementation of unit testing for one of my portfolio projects.",
       "Guided, directed and inspired to achieving excellence in the art of building software through adoption of clean code methods and best coding practices for optimization and performance.",
-    ],
-  },
-  {
-    id: 2,
-    company: "A.C. Harmony Enterprises Nig. Ltd",
-    role: "IT Technical Support",
-    period: "Apr 2019 - Oct 2019",
-    year: 2019,
-    duties: [
-      "Install and configure computer hardware operating systems and applications.",
-      "Monitor and maintain computer systems and networks.",
-      "Troubleshoot system and network problems, diagnosing and solving hardware or software faults.",
-      "Provide support, including procedural documentation and relevant reports.",
-      "Support the roll-out and immediate implementation of new software application.",
-      "Supervision and the verification of the posting of purchases, transfers and sales made using the automated web application software.",
     ],
   },
 ];
