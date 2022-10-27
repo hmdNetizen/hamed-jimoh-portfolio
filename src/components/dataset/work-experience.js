@@ -19,10 +19,10 @@ export const works = [
     period: "Jul 2021 - Jan 2022",
     year: 2021,
     duties: [
-      "Refactored a trading website while live in production without downtime incidents.",
+      "Refactored an asset and crypto trading website while live in production without downtime incidents.",
       "Collaborated on improvements to data security by adding encryption to user authentication",
-      "Leading team of three frontend engineers after on-boarding two new members to the project.",
-      "Building a Doctor/Patient appointment admin dashboard as a leader of the frontend team comprising of three frontend developers.",
+      "Led a team of three frontend engineers after on-boarding two new members to the asset and crypto trading project.",
+      "Collaborated and delivered a Doctor/Patient appointment admin dashboard as a leader of the frontend team comprising of three frontend developers.",
     ],
   },
   {
@@ -34,7 +34,7 @@ export const works = [
     duties: [
       "Coached and mentored by an experienced Full Stack Engineer at Wise.",
       "Introduced to the concept of automated testing and its varying tools and frameworks.",
-      "Implementation of unit testing for one of my portfolio projects.",
+      "Implementated unit testing to one of my portfolio projects.",
       "Guided, directed and inspired to achieving excellence in the art of building software through adoption of clean code methods and best coding practices for optimization and performance.",
     ],
   },
