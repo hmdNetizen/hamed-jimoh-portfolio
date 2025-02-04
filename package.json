@@ -20,9 +20,9 @@
     "react-slick": "^0.27.12"
   },
   "scripts": {
-    "vercel-build": "npm install --legacy-peer-deps && npm run build",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
+    "install": "npm install --legacy-peer-deps",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
