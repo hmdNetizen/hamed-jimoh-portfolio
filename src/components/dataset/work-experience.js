@@ -2,7 +2,7 @@ export const works = [
   {
     id: 1,
     company: "Brand Central Wholesale, New York",
-    role: "Lead Developer",
+    role: "Software Developer",
     period: "Dec 2021 - Present",
     year: 2021,
     duties: [

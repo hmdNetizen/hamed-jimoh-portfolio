@@ -16,8 +16,8 @@ import SvgIcon from "@material-ui/core/SvgIcon";
 import HighlightOff from "@material-ui/icons/HighlightOff";
 
 import { socials } from "../dataset/socials";
-import portrait from "../../assets/Hamed.png";
-import passport from "../../assets//passport.png";
+import portrait from "../../assets/portrait.jpg";
+import passport from "../../assets/passport.png";
 import home from "../../assets/home.svg";
 import email from "../../assets/email.svg";
 import devices from "../../assets/devices.svg";
@@ -663,12 +663,13 @@ const About = () => {
           lg={4}
           md={6}
           className={`${classes.gridUtils} ${classes.rightGrid}`}
+          style={{
+            backgroundColor: theme.palette.common.gold,
+            display: "flex",
+            alignItems: "center",
+          }}
         >
-          <img
-            src={portrait}
-            alt="Hamed Portrait"
-            style={{ width: "100%", height: "100%" }}
-          />
+          <img src={portrait} alt="Hamed Portrait" style={{ width: "100%" }} />
         </Grid>
       </Hidden>
     </Grid>
